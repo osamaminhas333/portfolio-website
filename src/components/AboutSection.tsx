@@ -199,7 +199,7 @@ export const AboutSection: React.FC = () => {
                 download="Osama_Minhas_CV.pdf"
                 className="inline-flex items-center space-x-2 px-6 py-3 border border-[#8C6D4F]/40 hover:border-[#D4AF37] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 font-sans group shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] bg-[#120F0C]/50"
               >
-                <span>DOWNLOAD LATEST CV</span>
+                <span>DOWNLOAD CV</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-[10px]">
                   ↓
                 </span>
