@@ -16,7 +16,7 @@ const bentoCategories = [
   {
     title: 'MEMORY & EVOLUTION',
     badge: 'SYSTEM DESIGN',
-    items: ['Memory Layers', 'Custom Skills', 'Slash Commands', 'Feedback Loops'],
+    items: ['Memory Layers', 'Custom Skills', 'Slash Commands', 'Feedback Loops', 'Claude Mem', '.md Files Management', 'Obsidian'],
     description: 'Engineer persistent memory and design evaluation loops where agents log outcomes and correct their own instruction sets.',
     stat: 'SELF-CORRECTING',
     colSpan: 'lg:col-span-5',
@@ -24,7 +24,7 @@ const bentoCategories = [
   {
     title: 'DOCKER & SELF-HOSTING',
     badge: 'INFRASTRUCTURE',
-    items: ['Docker Compose', 'WSL2', 'n8n', 'Volume Persistence', 'Odoo', 'ComfyUI', 'OpenClaw', 'MCP'],
+    items: ['Docker Compose', 'WSL2', 'n8n', 'Volume Persistence', 'Odoo', 'ComfyUI', 'OpenClaw', 'MCP', 'Mirofish'],
     description: 'Containerized deployment of agent runtimes and automation workflows with secure tunnels and environment management.',
     stat: 'LOCAL-FIRST',
     colSpan: 'lg:col-span-5',
@@ -32,7 +32,7 @@ const bentoCategories = [
   {
     title: 'AUDIT, ASSURANCE, SUSTAINABILITY & LEASE',
     badge: 'DIFFERENTIATOR',
-    items: ['IFRS', 'ISA', 'IFRS S1/S2', 'Evidence Trails', 'Controls', 'IFRS 16', 'FRS 102 (PARA 20)', 'ISA\'s', 'S1', 'S2', 'GHG'],
+    items: ['IFRS S1/S2', 'Evidence Trails', 'Controls', 'IFRS 16', 'FRS 102 (PARA 20)', 'ISA\'s', 'GHG'],
     description: 'Bringing a CA Finalist’s discipline to AI engineering, ensuring deployments carry verifiable controls for regulated finance environments.',
     stat: 'REGULATORY COMPLIANT',
     colSpan: 'lg:col-span-7',

@@ -36,7 +36,7 @@ const journey: RouteStop[] = [
   {
     id: '03',
     year: 'PRESENT',
-    title: 'CA INTER (CAF & AFC QUALIFIED)',
+    title: 'CA FINALIST',
     organization: 'INSTITUTE OF CHARTERED ACCOUNTANTS OF PAKISTAN (ICAP)',
     description: 'Completed Assessment in Fundamental Competencies (AFC) and Certificate in Accounting and Finance (CAF), bringing rigorous assurance discipline to AI engineering.',
   },
