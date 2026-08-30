@@ -1,0 +1,53 @@
+
+@layer base {
+  :root {
+    /* Surface Colors */
+    --color-surface-primary: #030303;
+    --color-surface-secondary: #0A0A0A;
+    
+    /* Text Colors */
+    --color-text-primary: #EDEDED;
+    --color-text-secondary: #808080;
+    
+    /* Borders & Lines */
+    --color-border-hairline: #1F1F1F;
+    
+    /* Accent - strictly for CA Inter */
+    --color-accent-gold: #C5A059;
+
+    /* Base Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+  }
+
+  body {
+    @apply bg-[var(--color-surface-primary)] text-[var(--color-text-primary)] antialiased selection:bg-[var(--color-text-secondary)] selection:text-[var(--color-surface-primary)];
+    /* Default to Inter (body font) */
+    font-family: var(--font-body), sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Lenis smooth scroll recommended CSS */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}

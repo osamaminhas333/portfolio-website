@@ -1,0 +1,318 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import ScrollStack, { ScrollStackItem } from './ui/ScrollStack';
+
+interface Project {
+  number: string;
+  title: string;
+  category: string;
+  description: string;
+  githubUrl: string;
+  tech: string[];
+  metrics: { label: string; value: string }[];
+}
+
+const projects: Project[] = [
+  {
+    number: '01',
+    title: 'Autonomous Crypto Trading Agent',
+    category: 'AI / ALGORITHMIC TRADING',
+    description:
+      '24/7 unattended trading system built through Claude Code — managing data ingestion, strategy logic, risk controls, and persistent session state for continuous market operation.',
+    githubUrl: '#', // Provide GitHub link if available, or just leave as '#'
+    tech: [
+      'Claude Code',
+      'Python',
+      'Docker',
+      'Data Ingestion APIs',
+      'Algorithmic Trading',
+    ],
+    metrics: [
+      { label: 'OPERATION', value: '24/7 Unattended' },
+      { label: 'ENGINE', value: 'Claude Code' },
+      { label: 'STATE', value: 'Persistent Sessions' },
+    ],
+  },
+  {
+    number: '02',
+    title: 'ContentOS — Content Pipeline',
+    category: 'AUTOMATION / MULTI-AGENT SYSTEM',
+    description:
+      'n8n workflow factory automating research, scripting, asset generation, and multi-platform publishing functioning entirely as an autonomous multi-agent system.',
+    githubUrl: '#',
+    tech: [
+      'n8n',
+      'Webhooks',
+      'REST APIs',
+      'Multi-Agent System',
+      'Scripting Automation',
+    ],
+    metrics: [
+      { label: 'ARCHITECTURE', value: 'Workflow Factory' },
+      { label: 'PIPELINE', value: 'Fully Autonomous' },
+      { label: 'INTEGRATION', value: 'Multi-Platform' },
+    ],
+  },
+  {
+    number: '03',
+    title: 'Zero-Cost Video Gen Stack',
+    category: 'OPEN-WEIGHT AI / SERVERLESS GPU',
+    description:
+      'Open-weight Wan 2.2 video model deployed on ComfyUI over serverless GPU (Modal, A100) with authenticated endpoints and budget controls, wired into n8n — replacing paid video APIs at near-zero marginal cost.',
+    githubUrl: '#',
+    tech: [
+      'Wan 2.2',
+      'ComfyUI',
+      'Modal (A100)',
+      'n8n',
+      'Serverless GPU',
+      'API Authentication',
+    ],
+    metrics: [
+      { label: 'MODEL', value: 'Wan 2.2 (Open-Weight)' },
+      { label: 'INFRASTRUCTURE', value: 'Serverless A100' },
+      { label: 'COST EFFICIENCY', value: 'Near-Zero Marginal' },
+    ],
+  },
+  {
+    number: '04',
+    title: 'Self-Hosted Agent Environment',
+    category: 'LOCAL DEPLOYMENT / CONTAINERIZATION',
+    description:
+      'OpenHands and agent runtimes under Docker with persistent volumes, isolated networking, and configurable LLM backends for secure, robust local execution.',
+    githubUrl: '#',
+    tech: [
+      'Docker',
+      'Docker Compose',
+      'OpenHands',
+      'WSL2',
+      'Volume Persistence',
+      'LLM Configuration',
+    ],
+    metrics: [
+      { label: 'DEPLOYMENT', value: 'Containerized (Docker)' },
+      { label: 'SECURITY', value: 'Isolated Networking' },
+      { label: 'FLEXIBILITY', value: 'Configurable Backends' },
+    ],
+  },
+  {
+    number: '05',
+    title: 'Odoo ERP Automation Harness',
+    category: 'ERP / AGENT ORCHESTRATION',
+    description:
+      'Integrating Odoo ERP with autonomous agent harnesses to automate accounting entry workflows, control testing, and reconcile operational records without manual intervention.',
+    githubUrl: '#',
+    tech: [
+      'Odoo ERP',
+      'Agent Harness',
+      'Python',
+      'Automation',
+      'Financial Accounting',
+    ],
+    metrics: [
+      { label: 'OPERATION', value: 'Automated Entry' },
+      { label: 'ENGINE', value: 'Agent Harness' },
+      { label: 'AUDIT', value: 'Verifiable Trail' },
+    ],
+  },
+  {
+    number: '06',
+    title: 'QuickBooks AI Bookkeeping Agent',
+    category: 'ACCOUNTING / AI AUTOMATION',
+    description:
+      'Automated QuickBooks bookkeeping pipeline powered by an AI agent that extracts invoice data, categorizes expenses, and continuously reconciles accounts.',
+    githubUrl: '#',
+    tech: [
+      'QuickBooks API',
+      'AI Agent',
+      'Data Extraction',
+      'Financial Recon',
+    ],
+    metrics: [
+      { label: 'OPERATION', value: 'Continuous Bookkeeping' },
+      { label: 'ENGINE', value: 'AI Agent' },
+      { label: 'ACCURACY', value: 'High-Precision Extraction' },
+    ],
+  },
+];
+
+export const ProjectsSection: React.FC = () => {
+  return (
+    <section
+      id="work"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans pt-20 pb-32 px-6 sm:px-12 lg:px-20"
+    >
+      {/* Studio Ambient Glows */}
+      <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        
+        {/* Eyebrow Header */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center space-x-4 mb-5"
+        >
+          <span
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37] font-sans"
+          >
+            02 / FEATURED WORK
+          </span>
+          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+        </motion.div>
+
+        {/* Section Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16"
+        >
+          <h2
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none font-bebas"
+          >
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+              SELECTED WORKS.
+            </span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+              ENGINEERED VALUE.
+            </span>
+          </h2>
+
+          <p
+            className="text-xs sm:text-sm font-light text-[#A8988B] max-w-sm mt-4 md:mt-0 leading-relaxed font-sans"
+          >
+            Scroll down to unfold the system architecture cards. Each platform was built to solve complex operational challenges with precision.
+          </p>
+        </motion.div>
+
+        {/* React Bits Stacking Deck */}
+        <ScrollStack
+          itemDistance={20}
+          itemScale={0.035}
+          itemStackDistance={18}
+          stackPosition="15%"
+          scaleEndPosition="6%"
+          baseScale={1 - (projects.length - 1) * 0.035}
+          useWindowScroll={true}
+        >
+          {projects.map((project) => (
+            <ScrollStackItem key={project.title}>
+              <div className="relative w-full h-[550px] sm:h-[450px] perspective-[2000px] group">
+                <div className="w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)] shadow-[0_25px_70px_rgba(0,0,0,0.98)]">
+                  
+                  {/* ================= FRONT FACE ================= */}
+                  <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 [backface-visibility:hidden] overflow-hidden flex flex-col justify-between">
+                    {/* Top Gold Border Light Flare */}
+                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
+
+                    {/* Corner Minimal L-Brackets */}
+                    <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D4AF37]/60" />
+                    <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D4AF37]/60" />
+                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D4AF37]/60" />
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#D4AF37]/60" />
+
+                    {/* Big Background Watermark Number */}
+                    <span className="absolute -bottom-6 -right-3 text-8xl sm:text-[12rem] font-bold text-[#EAD8C7]/[0.03] select-none pointer-events-none leading-none font-bebas">
+                      {project.number}
+                    </span>
+
+                    <div>
+                      <div className="flex items-center space-x-3 mb-4">
+                        <span className="text-xs font-mono font-bold text-[#D4AF37]">
+                          {project.number} //
+                        </span>
+                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
+                          {project.category}
+                        </span>
+                      </div>
+                      <h3 className="text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-white mb-4 uppercase leading-[0.9] font-bebas max-w-2xl">
+                        {project.title}
+                      </h3>
+                    </div>
+
+                    <div className="flex items-center space-x-3 text-[#D4AF37] opacity-80">
+                      <span className="text-[10px] font-mono tracking-[0.3em] uppercase">Hover to Explore Details</span>
+                      <span className="animate-pulse text-sm">↓</span>
+                    </div>
+                  </div>
+
+                  {/* ================= BACK FACE ================= */}
+                  <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full">
+                      
+                      {/* Left side: Description & Tech Stack */}
+                      <div className="lg:col-span-7 flex flex-col justify-between h-full">
+                        <div>
+                          <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
+                          <p className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans">
+                            {project.description}
+                          </p>
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-2 pt-6">
+                          {project.tech.map((t) => (
+                            <span
+                              key={t}
+                              className="px-3 py-1 text-[9.5px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#0A0806] text-[#E8D7C5] font-sans"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Right side: Metrics & Button */}
+                      <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
+                        <div className="space-y-3">
+                          <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] block mb-3">
+                            // ARCHITECTURE METRICS
+                          </span>
+                          {project.metrics.map((m) => (
+                            <div
+                              key={m.label}
+                              className="p-3 rounded-sm border border-[#8C6D4F]/30 bg-[#050403] flex items-center justify-between"
+                            >
+                              <span className="text-[9.5px] font-mono text-[#A8988B]">
+                                {m.label}
+                              </span>
+                              <span className="text-[10.5px] font-mono font-medium text-[#F7E7C4]">
+                                {m.value}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#D4AF37] bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#F7E7C4] hover:text-black text-[10.5px] font-medium tracking-[0.24em] uppercase transition-all duration-300 font-sans"
+                        >
+                          <span>VIEW DEPLOYMENT</span>
+                          <span className="text-xs">↗</span>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </ScrollStackItem>
+          ))}
+        </ScrollStack>
+
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
