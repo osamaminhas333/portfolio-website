@@ -232,6 +232,7 @@ export const HeroSection: React.FC = () => {
                 href="/documents/cv/osama-minhas-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Osama_Minhas_CV.pdf"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
