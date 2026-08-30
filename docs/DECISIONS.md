@@ -27,3 +27,12 @@ Running log: date · decision · reason
 
 - **Decision:** Enforced `min-h-[487px]` on the portrait image wrapper in `AboutSection.tsx`.
 - **Reason:** Next.js `<Image fill />` requires parent boundaries. Without this, the container resolved to 0 height in Tailwind v4 and the image disappeared.
+
+- **Decision:** Integrated Formsubmit.co API in `ContactSection.tsx`.
+- **Reason:** To enable direct email delivery to `osama.minhas111@gmail.com` without needing a backend server or complex third-party SDKs, keeping the static export (`output: 'export'`) constraint intact.
+
+- **Decision:** Added 7th project ("Automated MS Excel Office Work") and dynamically adjusted the `ScrollStack` component to handle arbitrary array lengths.
+- **Reason:** Added per user request. The prior hardcoded math was removed so adding new projects naturally scales without breaking the 3D flip deck.
+
+- **Decision:** Updated various skills and experience titles (e.g. CA Finalist, Mirofish, Claude Mem, Obsidian).
+- **Reason:** User requested specific additions to perfectly align the portfolio with their most recent tooling and credentials.

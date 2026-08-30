@@ -34,22 +34,24 @@ The entire portfolio is rendered as a single-page scrolling narrative in `src/ap
 - Stat updated to "12+" Agent Harnesses.
 
 ### `ProjectsSection.tsx` & `ScrollStack.tsx`
-- Contains 6 AI/Automation projects.
+- Contains 7 AI/Automation projects (including the new Automated MS Excel project).
 - **ScrollStack Mechanism:** The component `ScrollStack.tsx` pins cards as you scroll down.
-- **Dynamic Math Fix:** The original reference repo was hardcoded for exactly 4 cards. To support 6 cards without them growing out of bounds (scale > 1.0), the math was dynamically updated:
+- **Dynamic Math Fix:** The original reference repo was hardcoded for exactly 4 cards. To support 7+ cards without them growing out of bounds (scale > 1.0), the math was dynamically updated:
   - `itemStackDistance={18}` (tighter stack gap).
   - `baseScale = 1 - (projects.length - 1) * 0.035` (ensures the last card is always exactly `1.0` scale).
-  - `padding-bottom: 80vh;` in `ScrollStack.css` (provides a longer scrolling runway for all 6 cards to complete their stacking animation before the section unpins).
+  - `padding-bottom: 80vh;` in `ScrollStack.css` (provides a longer scrolling runway).
 - **3D Hover Flip:** Each project card inside the stack is built as a 3D flip card (`[transform-style:preserve-3d]`). The front face shows the title/category, and the back face (`rotateX(180deg)`) reveals the description, tech stack pills, and metrics.
 
 ### `SkillsSection.tsx`
 - A Bento grid displaying competencies.
-- The 4th card was manually updated to `"AUDIT, ASSURANCE & SUSTAINABILITY"` to emphasize the owner's CA background intersecting with ESG and AI.
+- Added various specific skills per owner request: OpenClaw, Mirofish, Claude Mem, Obsidian, DeepSeek Harness, OMP, Grok Bot.
+- The 4th card was manually updated to `"AUDIT, ASSURANCE, SUSTAINABILITY & LEASE"` and redundant pills were removed to ensure cleaner reading.
 
 ### `ExperienceSection.tsx`
 - Cinematic timeline.
 - Updated organizations for Sustainability Associate and Audit Associate to `"PETER & CO. CHARTERED ACCOUNTANTS"`.
-- Added `"AI AUTOMATION ENGINEER"` role at the top.
+- Added `"AI AUTOMATION ENGINEER"` role at the top, dated `DECEMBER 2025 - PRESENT`.
+- Simplified `"CA INTER..."` to `"CA FINALIST"`.
 
 ### `CertificationsSection.tsx`
 - Bespoke grid for AI & Finance certifications.
@@ -57,6 +59,7 @@ The entire portfolio is rendered as a single-page scrolling narrative in `src/ap
 
 ### `ContactSection.tsx`
 - Footer section ported from the cinematic reference.
+- **Backend-less Email Delivery:** Uses `fetch` to POST form data to `https://formsubmit.co/ajax/osama.minhas111@gmail.com`. This allows real email delivery while preserving the `output: 'export'` static architecture.
 
 ## 4. Next Steps & Future Amendments
 - If the owner requests a new project to be added, simply append it to the `projects` array in `ProjectsSection.tsx`. The `ScrollStack` math will dynamically adjust `baseScale` automatically.
