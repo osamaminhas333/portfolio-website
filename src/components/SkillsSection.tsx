@@ -8,7 +8,7 @@ const bentoCategories = [
   {
     title: 'AGENTIC HARNESSES & INTEGRATION',
     badge: 'CORE PILLAR',
-    items: ['Claude Code', 'OpenAI Codex', 'OpenCode', 'OpenHands'],
+    items: ['Claude Code', 'OpenAI Codex', 'OpenCode', 'OpenHands', 'OpenClaw', 'Harness Agent', 'DeepSeek Harness', 'OMP', 'Grok Bot'],
     description: 'Operate production execution environments connected to multiple LLM backends (Anthropic, OpenAI, Gemini) via routing gateways and local inference.',
     stat: 'MULTI-MODEL',
     colSpan: 'lg:col-span-7',
@@ -24,15 +24,15 @@ const bentoCategories = [
   {
     title: 'DOCKER & SELF-HOSTING',
     badge: 'INFRASTRUCTURE',
-    items: ['Docker Compose', 'WSL2', 'n8n', 'Volume Persistence'],
+    items: ['Docker Compose', 'WSL2', 'n8n', 'Volume Persistence', 'Odoo', 'ComfyUI', 'OpenClaw', 'MCP'],
     description: 'Containerized deployment of agent runtimes and automation workflows with secure tunnels and environment management.',
     stat: 'LOCAL-FIRST',
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'AUDIT, ASSURANCE & SUSTAINABILITY',
+    title: 'AUDIT, ASSURANCE, SUSTAINABILITY & LEASE',
     badge: 'DIFFERENTIATOR',
-    items: ['IFRS', 'ISA', 'IFRS S1/S2', 'Evidence Trails', 'Controls'],
+    items: ['IFRS', 'ISA', 'IFRS S1/S2', 'Evidence Trails', 'Controls', 'IFRS 16', 'FRS 102 (PARA 20)', 'ISA\'s', 'S1', 'S2', 'GHG'],
     description: 'Bringing a CA Finalist’s discipline to AI engineering, ensuring deployments carry verifiable controls for regulated finance environments.',
     stat: 'REGULATORY COMPLIANT',
     colSpan: 'lg:col-span-7',
