@@ -136,6 +136,26 @@ const projects: Project[] = [
       { label: 'ACCURACY', value: 'High-Precision Extraction' },
     ],
   },
+  {
+    number: '07',
+    title: 'Automated MS Excel Office Work',
+    category: 'OFFICE AUTOMATION / AI SCRIPTING',
+    description:
+      'Engineered automated pipelines for repetitive Microsoft Excel tasks, utilizing AI scripting to handle data formatting, complex calculations, and bulk reporting with zero manual entry.',
+    githubUrl: '#',
+    tech: [
+      'MS Excel',
+      'Python',
+      'AI Scripting',
+      'Data Processing',
+      'Reporting Automation',
+    ],
+    metrics: [
+      { label: 'OPERATION', value: 'Repetitive Task Automation' },
+      { label: 'ENGINE', value: 'AI Scripts' },
+      { label: 'IMPACT', value: 'Manual Work Eliminated' },
+    ],
+  },
 ];
 
 export const ProjectsSection: React.FC = () => {

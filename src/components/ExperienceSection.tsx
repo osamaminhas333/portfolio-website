@@ -14,7 +14,7 @@ interface RouteStop {
 const journey: RouteStop[] = [
   {
     id: '00',
-    year: 'MAY 2026 - PRESENT',
+    year: 'DECEMBER 2025 - PRESENT',
     title: 'AI AUTOMATION ENGINEER',
     organization: 'INDEPENDENT',
     description: 'Architecting and deploying self-hosted autonomous agent workflows. Building scalable AI systems integrating advanced memory layers and precise tooling for complex reporting environments.',
