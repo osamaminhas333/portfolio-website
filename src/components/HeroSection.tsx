@@ -73,7 +73,7 @@ export const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="h-full w-full max-w-none object-cover origin-right md:scale-[1.0] lg:scale-100"
+          className="w-full h-full object-cover object-center"
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
@@ -155,7 +155,7 @@ export const HeroSection: React.FC = () => {
         </header>
 
         {/* Main Hero Row */}
-        <div className="relative flex flex-col md:flex-row items-center justify-between w-full pt-4 pb-2 my-auto">
+        <div className="relative flex flex-col md:flex-row flex-wrap items-center justify-between w-full pt-4 pb-2 my-auto gap-y-12">
           
           {/* LEFT: Balanced Headline & Actions */}
           <motion.div
