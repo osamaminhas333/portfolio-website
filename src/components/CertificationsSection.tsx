@@ -12,6 +12,7 @@ interface Certification {
   category: 'AI / AGENTIC WORKFLOWS' | 'FINANCE / CORE';
   imagePath: string;
   customLabel?: string;
+  subLabel?: string;
   highlightLabel?: boolean;
 }
 
@@ -25,6 +26,7 @@ const certifications: Certification[] = [
     category: 'AI / AGENTIC WORKFLOWS',
     imagePath: '/documents/certificates/ai/ai-automation-engineer-with-n8n.png',
     customLabel: 'SPECIALISATION',
+    subLabel: '(7 Courses)',
     highlightLabel: true
   },
   {
@@ -45,6 +47,7 @@ const certifications: Certification[] = [
     category: 'AI / AGENTIC WORKFLOWS',
     imagePath: '/documents/certificates/ai/google-ai-professional.png',
     customLabel: 'SPECIALISATION',
+    subLabel: '(7 Courses)',
     highlightLabel: true
   },
   {
@@ -217,6 +220,11 @@ export const CertificationsSection: React.FC = () => {
                   <div>
                     <span className={`block uppercase mb-3 ${cert.highlightLabel ? 'text-[11px] font-bold font-sans tracking-[0.35em] text-[#F3DBB3] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]' : 'text-[9px] font-mono tracking-[0.25em] text-[#D4AF37]'}`}>
                       | {cert.customLabel || cert.category.replace(/\//g, '|')}
+                      {cert.subLabel && (
+                        <span className="font-normal font-sans text-[9px] tracking-[0.1em] text-[#D4AF37]/80 normal-case ml-2">
+                          {cert.subLabel}
+                        </span>
+                      )}
                     </span>
                     <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
                       {cert.title}
