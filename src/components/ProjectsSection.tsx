@@ -19,14 +19,25 @@ const projects: Project[] = [
     number: '01',
     title: 'Autonomous Crypto Trading Agent',
     category: 'AI / ALGORITHMIC TRADING',
-    description:
-      '24/7 unattended trading system built through Claude Code — managing data ingestion, strategy logic, risk controls, and persistent session state for continuous market operation.',
+    description: (
+      <div className="space-y-3">
+        <p>
+          A 24/7 unattended algorithmic trading system built on a hybrid architecture of agent harnesses and workflow automation. This setup ensures continuous market operation and risk management:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Control & Logic:</strong> Developed and controlled via Claude Code / OpenCode (Harness).</li>
+          <li><strong>Execution Engine:</strong> Trading automation and data pipelines run entirely on n8n.</li>
+          <li><strong>Live Reporting:</strong> Instant trade alerts and P&L summaries via Telegram.</li>
+          <li><strong>Risk Management:</strong> Autonomous data ingestion and strict persistent session state.</li>
+        </ul>
+      </div>
+    ),
     githubUrl: '#', // Provide GitHub link if available, or just leave as '#'
     tech: [
-      'Claude Code',
+      'Claude Code / OpenCode',
+      'n8n',
+      'Telegram API',
       'Python',
-      'Docker',
-      'Data Ingestion APIs',
       'Algorithmic Trading',
     ],
     metrics: [
