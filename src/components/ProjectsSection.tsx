@@ -314,7 +314,7 @@ export const ProjectsSection: React.FC = () => {
           <div className="lg:col-span-8 xl:col-span-9">
             <ScrollStack
               ref={scrollStackRef}
-              itemDistance={-280}
+              itemDistance={20}
               itemScale={0.035}
               itemStackDistance={18}
               stackPosition="15%"
