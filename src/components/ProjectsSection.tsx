@@ -37,10 +37,21 @@ const projects: Project[] = [
   },
   {
     number: '02',
-    title: 'ContentOS — Content Pipeline',
+    title: 'Content Factory — Content Pipeline',
     category: 'AUTOMATION / MULTI-AGENT SYSTEM',
-    description:
-      'n8n workflow factory automating research, scripting, asset generation, and multi-platform publishing functioning entirely as an autonomous multi-agent system.',
+    description: (
+      <div className="space-y-3">
+        <p>
+          An end-to-end n8n workflow factory functioning entirely as an autonomous multi-agent system. This robust content creation pipeline handles the complete lifecycle of digital media production and distribution:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Research:</strong> Autonomous trend analysis and topic gathering.</li>
+          <li><strong>Scripting:</strong> AI-driven generation of tailored video scripts.</li>
+          <li><strong>Asset Creation:</strong> Automated video and image generation pipeline.</li>
+          <li><strong>Distribution:</strong> Direct uploading to TikTok, Facebook, YouTube, and Instagram.</li>
+        </ul>
+      </div>
+    ),
     githubUrl: '#',
     tech: [
       'n8n',
