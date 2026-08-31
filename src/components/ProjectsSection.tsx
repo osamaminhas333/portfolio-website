@@ -146,8 +146,22 @@ const projects: Project[] = [
     number: '06',
     title: 'QuickBooks AI Bookkeeping Agent',
     category: 'ACCOUNTING / AI AUTOMATION',
-    description:
-      'Automated QuickBooks bookkeeping pipeline powered by an AI agent that extracts invoice data, categorizes expenses, and continuously reconciles accounts.',
+    description: (
+      <div className="space-y-3">
+        <p>
+          An advanced AI-powered bookkeeping pipeline seamlessly integrated with QuickBooks Online. This autonomous agent functions as a 24/7 virtual bookkeeper, managing core accounting operations with absolute precision:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Bank Reconciliations:</strong> Autonomous matching of bank feeds and transaction coding.</li>
+          <li><strong>Invoice & Receipt Processing:</strong> Automated OCR extraction and precise expense categorization.</li>
+          <li><strong>AP & AR Management:</strong> Tracking vendor bills, sending payment reminders, and managing receivables.</li>
+          <li><strong>Financial Reporting:</strong> Real-time generation of P&L statements, balance sheets, and audit trails.</li>
+        </ul>
+        <p>
+          By automating these QuickBooks essentials, the agent ensures continuous, error-free accounting records ready for tax compliance.
+        </p>
+      </div>
+    ),
     githubUrl: '#',
     tech: [
       'QuickBooks API',
