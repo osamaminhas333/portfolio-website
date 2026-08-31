@@ -18,6 +18,7 @@
   transform-origin: top center;
   will-change: transform, filter;
   backface-visibility: hidden;
+  scroll-margin-top: 15vh;
   transform-style: preserve-3d;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);

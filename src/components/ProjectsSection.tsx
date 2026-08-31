@@ -223,6 +223,13 @@ const projects: Project[] = [
 ];
 
 export const ProjectsSection: React.FC = () => {
+  const scrollToProject = (id: string) => {
+    const el = document.getElementById(`project-${id}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section
       id="work"
@@ -276,19 +283,23 @@ export const ProjectsSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* React Bits Stacking Deck */}
-        <ScrollStack
-          itemDistance={20}
-          itemScale={0.035}
-          itemStackDistance={18}
-          stackPosition="15%"
-          scaleEndPosition="6%"
-          baseScale={1 - (projects.length - 1) * 0.035}
-          useWindowScroll={true}
-        >
-          {projects.map((project) => (
-            <ScrollStackItem key={project.title}>
-              <div className="relative w-full h-[550px] sm:h-[450px] perspective-[2000px] group">
+        {/* React Bits Stacking Deck + Sidebar Navigation */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 relative">
+          
+          {/* LEFT: Project Cards */}
+          <div className="lg:col-span-8 xl:col-span-9">
+            <ScrollStack
+              itemDistance={20}
+              itemScale={0.035}
+              itemStackDistance={18}
+              stackPosition="15%"
+              scaleEndPosition="6%"
+              baseScale={1 - (projects.length - 1) * 0.035}
+              useWindowScroll={true}
+            >
+              {projects.map((project) => (
+                <ScrollStackItem key={project.title} id={`project-${project.number}`}>
+                  <div className="relative w-full h-[550px] sm:h-[450px] perspective-[2000px] group">
                 <div className="w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)] shadow-[0_25px_70px_rgba(0,0,0,0.98)]">
                   
                   {/* ================= FRONT FACE ================= */}
@@ -329,19 +340,16 @@ export const ProjectsSection: React.FC = () => {
 
                   {/* ================= BACK FACE ================= */}
                   <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)]">
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full">
-                      
-                      {/* Left side: Description & Tech Stack */}
-                      <div className="lg:col-span-7 flex flex-col justify-between h-full">
-                        <div>
-                          <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
-                          <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans">
-                            {project.description}
-                          </div>
+                    <div className="flex flex-col justify-between h-full">
+                      <div>
+                        <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
+                        <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans">
+                          {project.description}
                         </div>
-                        
-                        <div className="flex flex-wrap gap-2 pt-6">
+                      </div>
+                      
+                      <div className="mt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                        <div className="flex flex-wrap gap-2">
                           {project.tech.map((t) => (
                             <span
                               key={t}
@@ -351,40 +359,21 @@ export const ProjectsSection: React.FC = () => {
                             </span>
                           ))}
                         </div>
-                      </div>
-
-                      {/* Right side: Metrics & Button */}
-                      <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
-                        <div className="space-y-3">
-                          <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] block mb-3">
-                            // ARCHITECTURE METRICS
-                          </span>
-                          {project.metrics.map((m) => (
-                            <div
-                              key={m.label}
-                              className="p-3 rounded-sm border border-[#8C6D4F]/30 bg-[#050403] flex items-center justify-between"
-                            >
-                              <span className="text-[9.5px] font-mono text-[#A8988B]">
-                                {m.label}
-                              </span>
-                              <span className="text-[10.5px] font-mono font-medium text-[#F7E7C4]">
-                                {m.value}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-
+                        
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#D4AF37] bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#F7E7C4] hover:text-black text-[10.5px] font-medium tracking-[0.24em] uppercase transition-all duration-300 font-sans"
+                          className="group inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
                         >
-                          <span>VIEW DEPLOYMENT</span>
-                          <span className="text-xs">↗</span>
+                          <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
+                            View Deployment
+                          </span>
+                          <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
+                            ↗
+                          </span>
                         </a>
                       </div>
-
                     </div>
                   </div>
 
@@ -392,7 +381,37 @@ export const ProjectsSection: React.FC = () => {
               </div>
             </ScrollStackItem>
           ))}
-        </ScrollStack>
+          </ScrollStack>
+          </div>
+
+          {/* RIGHT: Timeline Navigation */}
+          <div className="hidden lg:block lg:col-span-4 xl:col-span-3">
+            <div className="sticky top-40 space-y-6">
+              <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] block mb-4">
+                // PROJECT DIRECTORY
+              </span>
+              <div className="relative pl-6 border-l border-[#8C6D4F]/20">
+                {projects.map((project) => (
+                  <div 
+                    key={project.title} 
+                    className="relative mb-6 group cursor-pointer" 
+                    onClick={() => scrollToProject(project.number)}
+                  >
+                    {/* Hover indicator dot */}
+                    <div className="absolute -left-[29px] top-1.5 w-2 h-2 rounded-full border border-[#8C6D4F]/40 bg-black group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] transition-all duration-300" />
+                    
+                    <span className="text-[9.5px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors block mb-1">
+                      {project.number} // {project.category}
+                    </span>
+                    <h5 className="text-[13px] font-medium tracking-wide text-[#A8988B] group-hover:text-[#F7E7C4] transition-colors uppercase">
+                      {project.title}
+                    </h5>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
