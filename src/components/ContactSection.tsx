@@ -1,30 +1,45 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { MessageCircle, Linkedin, Instagram, Mail } from 'lucide-react';
+
+const connections = [
+  {
+    id: 'whatsapp',
+    label: 'WHATSAPP',
+    value: 'Direct Message',
+    icon: <MessageCircle className="w-5 h-5" />,
+    href: 'https://wa.me/923334707011?text=Hello%20Osama,%20I%20would%20like%20to%20connect.',
+    clickable: true
+  },
+  {
+    id: 'linkedin',
+    label: 'LINKEDIN',
+    value: 'osamaminhas-',
+    icon: <Linkedin className="w-5 h-5" />,
+    href: 'https://www.linkedin.com/in/osamaminhas-',
+    clickable: true
+  },
+  {
+    id: 'instagram',
+    label: 'INSTAGRAM',
+    value: '@osamaminhas_',
+    icon: <Instagram className="w-5 h-5" />,
+    href: 'https://www.instagram.com/osamaminhas_?igsi=ZjdjaTQzN2p1aHJ6&utm_source=qr',
+    clickable: true
+  },
+  {
+    id: 'gmail',
+    label: 'GMAIL',
+    value: 'osama.minhas111@gmail.com',
+    icon: <Mail className="w-5 h-5" />,
+    href: '#',
+    clickable: false
+  }
+];
 
 export const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await fetch('https://formsubmit.co/ajax/osama.minhas111@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      setSent(true);
-    } catch (error) {
-      console.error(error);
-      setSent(true);
-    }
-  };
-
   return (
     <footer
       id="contact"
@@ -77,12 +92,12 @@ export const ContactSection: React.FC = () => {
               <p
                 className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-relaxed max-w-md font-sans"
               >
-                Have an ambitious system to architect, an engineering opportunity, or a collaborative inquiry? Send a direct dispatch below.
+                Have an ambitious system to architect, an engineering opportunity, or a collaborative inquiry? Choose a channel below to establish a connection.
               </p>
             </div>
           </div>
 
-          {/* Right Column: Monolith Terminal Form (7 Cols) */}
+          {/* Right Column: Connection Hub (7 Cols) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -99,74 +114,51 @@ export const ContactSection: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#D4AF37]/60" />
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/60" />
 
-            {sent ? (
-              <div className="py-16 text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#D4AF37] text-[#D4AF37] text-sm">
-                  ✓
-                </div>
-                <h3 className="text-3xl text-white font-normal uppercase font-bebas">
-                  PACKET DELIVERED
-                </h3>
-                <p className="text-xs text-[#A8988B] font-light font-sans">
-                  Transmission registered successfully.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] mb-2">
-                      // SENDER
-                    </span>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Enter name"
-                      className="w-full bg-[#120F0C] border border-[#8C6D4F]/30 focus:border-[#D4AF37] text-xs text-white placeholder-[#8C6D4F]/50 px-4 py-3 outline-none rounded-sm transition-colors font-sans"
-                    />
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+              {connections.map((conn) => {
+                const Wrapper = conn.clickable ? 'a' : 'div';
+                return (
+                  <Wrapper
+                    key={conn.id}
+                    href={conn.clickable ? conn.href : undefined}
+                    target={conn.clickable ? "_blank" : undefined}
+                    rel={conn.clickable ? "noopener noreferrer" : undefined}
+                    className={`group flex items-start space-x-4 p-5 rounded-sm border border-[#8C6D4F]/20 bg-[#120F0C] transition-all duration-300 ${
+                      conn.clickable 
+                        ? 'hover:border-[#D4AF37]/60 hover:bg-[#1A1612] cursor-pointer hover:shadow-[0_8px_25px_rgba(212,175,55,0.12)]' 
+                        : 'opacity-90'
+                    }`}
+                  >
+                    {/* Icon Container */}
+                    <div className={`p-3 rounded-full border border-[#8C6D4F]/30 bg-[#0A0806] text-[#D4AF37] transition-colors ${
+                      conn.clickable ? 'group-hover:bg-[#D4AF37] group-hover:text-black group-hover:border-[#D4AF37]' : ''
+                    }`}>
+                      {conn.icon}
+                    </div>
 
-                  <div>
-                    <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] mb-2">
-                      // CHANNEL
-                    </span>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Enter email"
-                      className="w-full bg-[#120F0C] border border-[#8C6D4F]/30 focus:border-[#D4AF37] text-xs text-white placeholder-[#8C6D4F]/50 px-4 py-3 outline-none rounded-sm transition-colors font-sans"
-                    />
-                  </div>
-                </div>
+                    {/* Content */}
+                    <div className="flex flex-col justify-center pt-1">
+                      <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] mb-1.5">
+                        // {conn.label}
+                      </span>
+                      <span className={`text-[13px] font-medium tracking-wide transition-colors ${
+                        conn.clickable ? 'text-[#E8DFD8] group-hover:text-[#F7E7C4]' : 'text-[#E8DFD8]'
+                      }`}>
+                        {conn.value}
+                      </span>
+                    </div>
 
-                <div>
-                  <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] mb-2">
-                    // PAYLOAD
-                  </span>
-                  <textarea
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Enter transmission payload..."
-                    className="w-full bg-[#120F0C] border border-[#8C6D4F]/30 focus:border-[#D4AF37] text-xs text-white placeholder-[#8C6D4F]/50 p-4 outline-none rounded-sm transition-colors resize-none font-sans"
-                  />
-                </div>
+                    {/* Optional external link arrow */}
+                    {conn.clickable && (
+                      <span className="absolute top-5 right-5 text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors text-xs transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                        ↗
+                      </span>
+                    )}
+                  </Wrapper>
+                );
+              })}
+            </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-3.5 border border-[#8C6D4F]/50 bg-[#14100D] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] hover:text-[#F7E7C4] text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)] font-sans"
-                >
-                  EXECUTE DISPATCH ↗
-                </button>
-
-              </form>
-            )}
           </motion.div>
 
         </div>
