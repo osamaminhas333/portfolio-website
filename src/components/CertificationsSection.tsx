@@ -276,8 +276,8 @@ export const CertificationsSection: React.FC = () => {
 
         {/* CA CERTIFICATES */}
         <div>
-          <h3 className="text-xl sm:text-2xl font-light tracking-[0.2em] uppercase text-[#F3DBB3] mb-8 font-bebas border-b border-[#8C6D4F]/30 pb-4">
-            CA CERTIFICATES
+          <h3 className="text-xl sm:text-2xl font-light tracking-[0.2em] uppercase text-[#F3DBB3] mb-8 font-bebas border-b border-[#8C6D4F]/30 pb-4 mt-16">
+            CA CERTIFICATES AND QUALIFICATION
           </h3>
 
           <div className="mb-10">
