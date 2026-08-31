@@ -227,42 +227,54 @@ export const CertificationsSection: React.FC = () => {
             CA CERTIFICATES
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {caCerts.map((cert, index) => (
-              <motion.div
-                key={cert.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                onClick={() => setSelectedCert(cert)}
-                className="relative p-7 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C]/80 backdrop-blur-md group hover:border-[#D4AF37]/70 hover:bg-[#1A1612] transition-all duration-500 cursor-pointer overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
-              >
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="flex flex-col h-full justify-between">
-                  <div>
-                    <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
-                      // {cert.category}
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
-                      {cert.title}
-                    </h3>
-                    <span className="block text-xs font-medium tracking-wider text-[#8C6D4F] uppercase font-sans mb-4">
-                      {cert.issuer}
-                    </span>
+            {caCerts.map((cert, index) => {
+              const isCaMain = cert.id === 'ca-1';
+              return (
+                <motion.div
+                  key={cert.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.7, delay: index * 0.1 }}
+                  onClick={() => setSelectedCert(cert)}
+                  className={`relative p-7 rounded-sm border bg-[#120F0C]/80 backdrop-blur-md group transition-all duration-500 cursor-pointer overflow-hidden ${
+                    isCaMain 
+                      ? 'border-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.15)] hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] bg-gradient-to-b from-[#1F1911] to-[#120F0C]' 
+                      : 'border-[#8C6D4F]/30 hover:border-[#D4AF37]/70 hover:bg-[#1A1612] shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]'
+                  }`}
+                >
+                  {isCaMain && (
+                    <div className="absolute inset-0 border border-[#D4AF37]/50 rounded-sm pointer-events-none" />
+                  )}
+                  <div className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent ${isCaMain ? 'via-[#D4AF37]' : 'via-[#D4AF37]/50'} to-transparent ${isCaMain ? 'opacity-50' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-500`} />
+                  <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
+                  <div className="flex flex-col h-full justify-between relative z-10">
+                    <div>
+                      <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
+                        // {cert.category} {isCaMain && ' // CORE CREDENTIAL'}
+                      </span>
+                      <h3 className={`text-2xl sm:text-3xl tracking-wide leading-tight mb-2 transition-colors font-bebas ${
+                        isCaMain ? 'text-[#F3DBB3]' : 'text-white group-hover:text-[#F7E7C4]'
+                      }`}>
+                        {cert.title}
+                      </h3>
+                      <span className="block text-xs font-medium tracking-wider text-[#8C6D4F] uppercase font-sans mb-4">
+                        {cert.issuer}
+                      </span>
+                    </div>
+                    <div className="pt-5 border-t border-[#8C6D4F]/20 mt-auto">
+                      <p className="text-[11px] sm:text-xs text-[#A8988B] font-light leading-relaxed font-sans">
+                        {cert.details}
+                      </p>
+                      <span className="block mt-4 text-[10px] text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity tracking-[0.2em] font-medium uppercase">
+                        VIEW CERTIFICATE ↗
+                      </span>
+                    </div>
                   </div>
-                  <div className="pt-5 border-t border-[#8C6D4F]/20 mt-auto">
-                    <p className="text-[11px] sm:text-xs text-[#A8988B] font-light leading-relaxed font-sans">
-                      {cert.details}
-                    </p>
-                    <span className="block mt-4 text-[10px] text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity tracking-[0.2em] font-medium uppercase">
-                      VIEW CERTIFICATE ↗
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
