@@ -66,10 +66,10 @@ const connections = [
   {
     id: 'gmail',
     label: 'GMAIL',
-    value: 'osama.minhas111@gmail.com',
+    value: 'Send Email',
     icon: <Mail className="w-5 h-5" />,
-    href: '#',
-    clickable: false
+    href: 'mailto:osama.minhas111@gmail.com',
+    clickable: true
   }
 ];
 
