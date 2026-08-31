@@ -100,7 +100,7 @@ const certifications: Certification[] = [
     issuer: 'Institute of Chartered Accountants of Pakistan',
     details: 'AFC & CAF Qualified — Rigorous Audit Discipline',
     category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/icap-ca-inter.png',
+    imagePath: '/documents/certificates/ca/icap-ca-inter.jpeg',
     customLabel: 'ACCOUNTING AND FINANCE'
   },
   {
@@ -108,35 +108,35 @@ const certifications: Certification[] = [
     title: 'Workshop On Building Sustainability (S1, S2)',
     issuer: 'SMP Committee of ICAP',
     details: 'Sustainability & ESG Reporting',
-    category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/workshop-on-building-sustainability.png',
+    category: 'FINANCE / SUSTAINABILITY',
+    imagePath: '/documents/certificates/ca/icap-smp-building-sustainability.jpeg',
     customLabel: 'SUSTAINABILITY REPORTING'
   },
   {
     id: 'ca-3',
     title: 'Integrated Sustainability Disclosures',
-    issuer: 'IFRS',
-    details: 'IFRS Sustainability Standards',
-    category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/integrated-sustainability-disclosures.png',
+    issuer: 'ICAP',
+    details: 'IFRS S1 and S2 Integration',
+    category: 'FINANCE / SUSTAINABILITY',
+    imagePath: '/documents/certificates/ca/ifrs-04-integrated-sustainability-disclosures.png',
     customLabel: 'SUSTAINABILITY REPORTING'
   },
   {
     id: 'ca-4',
     title: 'Introduction to IFRS S1',
-    issuer: 'IFRS',
-    details: 'General Requirements for Disclosure of Sustainability-related Financial Information',
-    category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/introduction-to-ifrs-s1.png',
+    issuer: 'ICAP',
+    details: 'General Requirements for Disclosure',
+    category: 'FINANCE / SUSTAINABILITY',
+    imagePath: '/documents/certificates/ca/ifrs-02-introduction-s1.png',
     customLabel: 'SUSTAINABILITY REPORTING'
   },
   {
     id: 'ca-5',
     title: 'Introduction to IFRS S2',
-    issuer: 'IFRS',
+    issuer: 'ICAP',
     details: 'Climate-related Disclosures',
-    category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/introduction-to-ifrs-s2.png',
+    category: 'FINANCE / SUSTAINABILITY',
+    imagePath: '/documents/certificates/ca/ifrs-03-introduction-s2.png',
     customLabel: 'SUSTAINABILITY REPORTING'
   }
 ];
