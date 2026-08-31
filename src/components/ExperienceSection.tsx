@@ -37,6 +37,12 @@ const experience: RouteStop[] = [
 
 const education: RouteStop[] = [
   {
+    id: 'e1',
+    title: 'CA FINALIST',
+    organization: 'INSTITUTE OF CHARTERED ACCOUNTANTS OF PAKISTAN (ICAP)',
+    description: 'Completed Assessment in Fundamental Competencies (AFC) and Certificate in Accounting and Finance (CAF), bringing rigorous assurance discipline to AI engineering.',
+  },
+  {
     id: 'e2',
     title: 'ASSOCIATE DEGREE IN COMMERCE',
     organization: 'GOVERNMENT COLLEGE UNIVERSITY, FAISALABAD (GCUF)',
@@ -47,12 +53,6 @@ const education: RouteStop[] = [
     title: 'F.Sc PRE-MEDICAL',
     organization: 'PUNJAB COLLEGE OF SCIENCE',
     description: 'Pre-medical foundational studies.',
-  },
-  {
-    id: 'e1',
-    title: 'CA FINALIST',
-    organization: 'INSTITUTE OF CHARTERED ACCOUNTANTS OF PAKISTAN (ICAP)',
-    description: 'Completed Assessment in Fundamental Competencies (AFC) and Certificate in Accounting and Finance (CAF), bringing rigorous assurance discipline to AI engineering.',
   }
 ];
 
