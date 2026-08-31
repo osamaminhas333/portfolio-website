@@ -38,7 +38,17 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const connections = [
+interface Connection {
+  id: string;
+  label: string;
+  value: string;
+  icon: React.ReactNode;
+  href?: string;
+  subText?: string;
+  clickable?: boolean;
+}
+
+const connections: Connection[] = [
   {
     id: 'whatsapp',
     label: 'WHATSAPP',
@@ -61,6 +71,7 @@ const connections = [
     value: '@osamabuilds_',
     icon: <InstagramIcon className="w-5 h-5" />,
     href: 'https://www.instagram.com/osamabuilds_?igsi=MWhwaTJvOTJ6OXJ1Zg%3D%3D&utm_source=qr',
+    subText: 'For demo videos visit here',
     clickable: true
   },
   {
@@ -180,6 +191,11 @@ export const ContactSection: React.FC = () => {
                       }`}>
                         {conn.value}
                       </span>
+                      {conn.subText && (
+                        <span className="text-[9px] font-mono tracking-widest uppercase text-[#D4AF37]/80 mt-2 block">
+                          {conn.subText}
+                        </span>
+                      )}
                     </div>
 
                     {/* Optional external link arrow */}
