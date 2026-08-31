@@ -81,7 +81,7 @@ const projects: Project[] = [
     title: 'Self-Hosted Agent Environment',
     category: 'LOCAL DEPLOYMENT / CONTAINERIZATION',
     description:
-      'OpenHands and agent runtimes under Docker with persistent volumes, isolated networking, and configurable LLM backends for secure, robust local execution.',
+      'Deployed a comprehensive self-hosted environment integrating OpenHands, n8n, OpenClaw, Agent Harnesses, OMP, ComfyUI, MCP, Odoo, and PostgreSQL under Docker. Configured with persistent volumes, isolated networking, and interchangeable LLM backends for secure, robust local execution.',
     githubUrl: '#',
     tech: [
       'Docker',
