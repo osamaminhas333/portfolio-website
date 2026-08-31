@@ -284,6 +284,30 @@ export const ProjectsSection: React.FC = () => {
           </p>
         </motion.div>
 
+        {/* MOBILE: Horizontal Project Directory (Hidden on desktop) */}
+        <div 
+          className="block lg:hidden w-full overflow-x-auto pb-4 mb-10 border-b border-[#8C6D4F]/20 snap-x snap-mandatory hide-scroll"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <style dangerouslySetInnerHTML={{__html: `
+            .hide-scroll::-webkit-scrollbar { display: none; }
+          `}} />
+          <div className="flex space-x-6 w-max px-2">
+            {projects.map((project, i) => (
+              <div 
+                key={project.title} 
+                className="relative group cursor-pointer flex flex-col items-start snap-start" 
+                onClick={() => scrollToProject(i)}
+              >
+                <div className="w-2 h-2 rounded-full border border-[#8C6D4F]/40 bg-black group-hover:bg-[#D4AF37] transition-colors mb-2" />
+                <h5 className="text-[10px] font-medium tracking-widest text-[#A8988B] group-hover:text-[#F7E7C4] transition-colors uppercase whitespace-nowrap">
+                  {project.title}
+                </h5>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* React Bits Stacking Deck + Sidebar Navigation */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 relative">
           
