@@ -279,7 +279,7 @@ export const CertificationsSection: React.FC = () => {
 
           <div className="mb-10">
             <h4 className="text-sm font-medium tracking-[0.25em] uppercase text-[#8C6D4F] mb-6 font-sans">
-              // DEGREE
+              // QUALIFICATION
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {caDegree.map((cert, i) => renderCertCard(cert, i, true))}
