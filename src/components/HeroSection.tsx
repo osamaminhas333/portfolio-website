@@ -201,7 +201,7 @@ export const HeroSection: React.FC = () => {
               className="text-xs sm:text-sm md:text-[13.5px] font-light text-[#A8988B] leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1 font-sans"
             >
               <p>
-                Bringing the rigorous assurance and control testing discipline of a Chartered Accountant (ICAP Finalist) to AI engineering. 
+                Bridging the deep precision of Accounting and Finance with the autonomous execution of Agentic AI and Automation.
                 <br />
                 I deploy self-hosting agents that perform reliably in regulated, finance-heavy environments with evidence trails and verifiable output.
               </p>
