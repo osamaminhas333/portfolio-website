@@ -284,23 +284,20 @@ export const ProjectsSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* MOBILE: Horizontal Project Directory (Hidden on desktop) */}
-        <div 
-          className="block lg:hidden w-full overflow-x-auto pb-4 mb-10 border-b border-[#8C6D4F]/20 snap-x snap-mandatory hide-scroll"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          <style dangerouslySetInnerHTML={{__html: `
-            .hide-scroll::-webkit-scrollbar { display: none; }
-          `}} />
-          <div className="flex space-x-6 w-max px-2">
+        {/* MOBILE: Grid Project Directory (Hidden on desktop) */}
+        <div className="block lg:hidden w-full pb-6 mb-10 border-b border-[#8C6D4F]/20">
+          <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] block mb-4 px-2">
+            // PROJECT DIRECTORY
+          </span>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-5 px-2">
             {projects.map((project, i) => (
               <div 
                 key={project.title} 
-                className="relative group cursor-pointer flex flex-col items-start snap-start" 
+                className="relative group cursor-pointer flex flex-col items-start" 
                 onClick={() => scrollToProject(i)}
               >
-                <div className="w-2 h-2 rounded-full border border-[#8C6D4F]/40 bg-black group-hover:bg-[#D4AF37] transition-colors mb-2" />
-                <h5 className="text-[10px] font-medium tracking-widest text-[#A8988B] group-hover:text-[#F7E7C4] transition-colors uppercase whitespace-nowrap">
+                <div className="w-1.5 h-1.5 rounded-full border border-[#8C6D4F]/40 bg-black group-active:bg-[#D4AF37] transition-colors mb-2" />
+                <h5 className="text-[9.5px] font-medium tracking-widest text-[#A8988B] group-active:text-[#F7E7C4] transition-colors uppercase leading-[1.4]">
                   {project.title}
                 </h5>
               </div>
