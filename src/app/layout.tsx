@@ -27,6 +27,13 @@ export const metadata: Metadata = {
   description: "AI Agent Engineer & CA Finalist (ICAP) — LLM Orchestration, Automation, & Assurance.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

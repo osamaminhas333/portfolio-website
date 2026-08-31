@@ -50,7 +50,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden bg-black text-[#E8DFD8] font-sans cursor-none">
+    <section className="relative w-full h-[100dvh] overflow-hidden bg-black text-[#E8DFD8] font-sans cursor-none">
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
@@ -67,13 +67,13 @@ export const HeroSection: React.FC = () => {
       )}
 
       {/* ================= 2. FIXED VIDEO LAYER ================= */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end w-full h-full">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="h-screen w-auto max-w-none object-cover origin-right md:scale-[1.0] lg:scale-100"
+          className="h-full w-auto max-w-none object-cover origin-right md:scale-[1.0] lg:scale-100"
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
