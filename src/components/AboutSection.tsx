@@ -270,14 +270,17 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Portrait Image Canvas */}
-              <div className="relative overflow-hidden w-full max-w-[390px] aspect-[4/5] min-h-[487px] bg-black rounded-sm">
+              <div 
+                className="relative overflow-hidden w-full max-w-[390px] bg-black rounded-sm mx-auto"
+                style={{ aspectRatio: '4/5' }}
+              >
                 {/* Main Portrait */}
                 <Image
                   src="/media/enhanced.png"
                   alt="Mohammad Osama Minhas"
                   fill
                   sizes="(max-width: 768px) 100vw, 390px"
-                  className="w-full h-full object-cover object-center filter brightness-[0.94] contrast-[1.06] saturate-[1.02] group-hover:brightness-105 group-hover:contrast-[1.12] transition-all duration-700 ease-out"
+                  className="object-cover object-center filter brightness-[0.94] contrast-[1.06] saturate-[1.02] group-hover:brightness-105 group-hover:contrast-[1.12] transition-all duration-700 ease-out"
                 />
 
                 {/* Mouse-Tracked Holographic Glass Spotlight Sweep */}
