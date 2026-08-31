@@ -191,8 +191,8 @@ export const CertificationsSection: React.FC = () => {
           <p className="text-[11px] sm:text-xs text-[#A8988B] font-light leading-relaxed font-sans">
             {cert.details}
           </p>
-          <span className="block mt-4 text-[10px] text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity tracking-[0.2em] font-medium uppercase">
-            VIEW CERTIFICATE ↗
+          <span className="inline-flex items-center mt-4 text-[10px] text-[#D4AF37]/90 group-hover:text-[#F7E7C4] transition-colors duration-300 tracking-[0.2em] font-semibold uppercase">
+            VIEW CERTIFICATE <span className="ml-1 text-[11px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
           </span>
         </div>
       </div>
