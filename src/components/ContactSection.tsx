@@ -58,9 +58,9 @@ const connections = [
   {
     id: 'instagram',
     label: 'INSTAGRAM',
-    value: '@osamaminhas_',
+    value: '@osamabuilds_',
     icon: <InstagramIcon className="w-5 h-5" />,
-    href: 'https://www.instagram.com/osamaminhas_?igsi=ZjdjaTQzN2p1aHJ6&utm_source=qr',
+    href: 'https://www.instagram.com/osamabuilds_?igsi=MWhwaTJvOTJ6OXJ1Zg%3D%3D&utm_source=qr',
     clickable: true
   },
   {
