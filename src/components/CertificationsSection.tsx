@@ -100,7 +100,8 @@ const certifications: Certification[] = [
     issuer: 'Institute of Chartered Accountants of Pakistan',
     details: 'AFC & CAF Qualified — Rigorous Audit Discipline',
     category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/ca-inter.jpeg'
+    imagePath: '/documents/certificates/ca/icap-ca-inter.png',
+    customLabel: 'ACCOUNTING AND FINANCE'
   },
   {
     id: 'ca-2',
@@ -108,7 +109,8 @@ const certifications: Certification[] = [
     issuer: 'SMP Committee of ICAP',
     details: 'Sustainability & ESG Reporting',
     category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/icap-s1-s2.jpeg'
+    imagePath: '/documents/certificates/ca/workshop-on-building-sustainability.png',
+    customLabel: 'SUSTAINABILITY REPORTING'
   },
   {
     id: 'ca-3',
@@ -116,7 +118,8 @@ const certifications: Certification[] = [
     issuer: 'IFRS',
     details: 'IFRS Sustainability Standards',
     category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/integrated-sustainability-disclosures.png'
+    imagePath: '/documents/certificates/ca/integrated-sustainability-disclosures.png',
+    customLabel: 'SUSTAINABILITY REPORTING'
   },
   {
     id: 'ca-4',
@@ -124,7 +127,8 @@ const certifications: Certification[] = [
     issuer: 'IFRS',
     details: 'General Requirements for Disclosure of Sustainability-related Financial Information',
     category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/ifrs-s1.png'
+    imagePath: '/documents/certificates/ca/introduction-to-ifrs-s1.png',
+    customLabel: 'SUSTAINABILITY REPORTING'
   },
   {
     id: 'ca-5',
@@ -132,7 +136,8 @@ const certifications: Certification[] = [
     issuer: 'IFRS',
     details: 'Climate-related Disclosures',
     category: 'FINANCE / CORE',
-    imagePath: '/documents/certificates/ca/ifrs-s2.png'
+    imagePath: '/documents/certificates/ca/introduction-to-ifrs-s2.png',
+    customLabel: 'SUSTAINABILITY REPORTING'
   }
 ];
 
@@ -211,7 +216,7 @@ export const CertificationsSection: React.FC = () => {
                 <div className="flex flex-col h-full justify-between">
                   <div>
                     <span className={`block uppercase mb-3 ${cert.highlightLabel ? 'text-[11px] font-bold font-sans tracking-[0.35em] text-[#F3DBB3] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]' : 'text-[9px] font-mono tracking-[0.25em] text-[#D4AF37]'}`}>
-                      // {cert.customLabel || cert.category}
+                      | {cert.customLabel || cert.category.replace(/\//g, '|')}
                     </span>
                     <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
                       {cert.title}
@@ -265,7 +270,7 @@ export const CertificationsSection: React.FC = () => {
                   <div className="flex flex-col h-full justify-between relative z-10">
                     <div>
                       <span className={`block uppercase mb-3 ${cert.highlightLabel ? 'text-[11px] font-bold font-sans tracking-[0.35em] text-[#F3DBB3] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]' : 'text-[9px] font-mono tracking-[0.25em] text-[#D4AF37]'}`}>
-                        // {cert.customLabel || cert.category} {isCaMain && ' // CORE CREDENTIAL'}
+                        | {cert.customLabel || cert.category.replace(/\//g, '|')} {isCaMain && ' | CORE CREDENTIAL'}
                       </span>
                       <h3 className={`text-2xl sm:text-3xl tracking-wide leading-tight mb-2 transition-colors font-bebas ${
                         isCaMain ? 'text-[#F3DBB3]' : 'text-white group-hover:text-[#F7E7C4]'
