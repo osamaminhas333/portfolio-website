@@ -7,4 +7,4 @@
   --font-bebas: var(--font-bebas-neue);
   --font-allura: var(--font-allura);
 }
-html, body { overflow-x: hidden !important; max-width: 100vw !important; width: 100% !important; position: relative; overscroll-behavior-x: none; }
+html, body { overflow-x: clip !important; max-width: 100vw !important; width: 100% !important; position: relative; overscroll-behavior-x: none; }

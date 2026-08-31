@@ -234,11 +234,13 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans pt-20 pb-32 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans pt-20 pb-32 px-6 sm:px-12 lg:px-20"
     >
-      {/* Studio Ambient Glows */}
-      <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px] pointer-events-none" />
+      {/* Studio Ambient Glows (Wrapped to prevent horizontal overflow) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px]" />
+      </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
@@ -408,7 +410,7 @@ export const ProjectsSection: React.FC = () => {
           </div>
 
           {/* RIGHT: Timeline Navigation */}
-          <div className="hidden lg:block lg:col-span-4 xl:col-span-3">
+          <div className="hidden lg:block lg:col-span-4 xl:col-span-3 h-full">
             <div className="sticky top-40 space-y-6">
               <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] block mb-4">
                 // PROJECT DIRECTORY

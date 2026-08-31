@@ -40,14 +40,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark overflow-x-hidden" suppressHydrationWarning>
+    <html lang="en" className="dark overflow-x-clip" suppressHydrationWarning>
       <body
         suppressHydrationWarning
         className={cn(
           montserrat.variable,
           bebasNeue.variable,
           allura.variable,
-          "bg-black text-[#E8DFD8] antialiased selection:bg-[#cbb59d] selection:text-black overflow-x-hidden"
+          "bg-black text-[#E8DFD8] antialiased selection:bg-[#cbb59d] selection:text-black overflow-x-clip"
         )}
       >
         <SmoothScroll>
