@@ -133,7 +133,7 @@ export const AboutSection: React.FC = () => {
               variants={fadeUpVariants}
               className="text-xs sm:text-sm md:text-[14.5px] font-light text-[#B3A497] leading-[1.85] tracking-wide mb-10 max-w-xl font-sans"
             >
-              I'm <span className="text-[#F3DBB3] font-medium">Mohammad Osama Minhas</span>, an AI agent engineer and automation specialist who builds, wires and self-hosts production agentic systems connected to multiple LLM backends. With a second edge as a CA Finalist, I ensure the systems I build carry evidence trails, controls, and verifiable output—precisely where AI deployments often fail in regulated, finance-heavy environments.
+              I am <span className="text-[#F3DBB3] font-medium">Mohammad Osama Minhas</span>. I operate at the rare intersection of elite financial rigor and advanced artificial intelligence. As an AI Agent Engineer and a Chartered Accountant (ICAP Finalist), I construct self-hosted, multi-agent systems that execute complex workflows with absolute precision. My dual background ensures every automated system I build carries the strict controls, evidence trails, and verifiable output demanded by regulated, finance-heavy environments—precisely where conventional AI deployments fail compliance.
             </motion.p>
 
             {/* Concise 4-Item Achievement Metrics Grid */}
