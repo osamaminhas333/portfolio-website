@@ -8,7 +8,7 @@ interface Project {
   number: string;
   title: string;
   category: string;
-  description: string;
+  description: React.ReactNode;
   githubUrl: string;
   tech: string[];
   metrics: { label: string; value: string }[];
@@ -99,10 +99,24 @@ const projects: Project[] = [
   },
   {
     number: '05',
-    title: 'Odoo ERP Automation Harness',
+    title: 'Odoo (ERP) Agentic Automation',
     category: 'ERP / AGENT ORCHESTRATION',
-    description:
-      'Integrating Odoo ERP with autonomous agent harnesses to automate accounting entry workflows, control testing, and reconcile operational records without manual intervention.',
+    description: (
+      <div className="space-y-3">
+        <p>
+          End-to-end integration of Odoo ERP with autonomous agent harnesses, transforming a traditional ERP into an intelligent, self-driving business engine. The AI agents have full control to execute and monitor workflows across all major Odoo modules without manual intervention:
+        </p>
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Sales & CRM:</strong> Automated lead scoring, quotation generation, and follow-ups.</li>
+          <li><strong>Accounting:</strong> Journal entries, ledger reconciliations, and tax compliance.</li>
+          <li><strong>Accounts Payable & Receivable:</strong> Automated invoice matching, payment tracking, and aging analysis.</li>
+          <li><strong>Inventory & Procurement:</strong> Autonomous stock monitoring and automated purchase orders.</li>
+        </ul>
+        <p>
+          This architecture ensures absolute operational efficiency with built-in audit trails and control testing.
+        </p>
+      </div>
+    ),
     githubUrl: '#',
     tech: [
       'Odoo ERP',
@@ -272,9 +286,9 @@ export const ProjectsSection: React.FC = () => {
                       <div className="lg:col-span-7 flex flex-col justify-between h-full">
                         <div>
                           <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
-                          <p className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans">
+                          <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans">
                             {project.description}
-                          </p>
+                          </div>
                         </div>
                         
                         <div className="flex flex-wrap gap-2 pt-6">
