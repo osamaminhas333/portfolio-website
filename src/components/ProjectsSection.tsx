@@ -179,14 +179,28 @@ const projects: Project[] = [
     number: '07',
     title: 'Automated MS Excel Office Work',
     category: 'OFFICE AUTOMATION / AI SCRIPTING',
-    description:
-      'Engineered automated pipelines for repetitive Microsoft Excel tasks, utilizing AI scripting to handle data formatting, complex calculations, and bulk reporting with zero manual entry.',
+    description: (
+      <div className="space-y-3">
+        <p>
+          Transforming manual spreadsheet workflows into an autonomous pipeline by connecting Microsoft Excel directly to AI agents via the Model Context Protocol (MCP). This integration completely eliminates repetitive data entry and complex manual formatting:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Data Formatting & Cleansing:</strong> Autonomous parsing, structuring, and cleaning of raw financial datasets.</li>
+          <li><strong>Complex Calculations:</strong> AI-driven execution of dynamic financial modeling and pivot logic.</li>
+          <li><strong>Bulk Reporting:</strong> Automated generation and styling of executive dashboards and summaries.</li>
+          <li><strong>Cross-System Sync:</strong> Seamlessly reading and writing data between Excel and external databases via MCP.</li>
+        </ul>
+        <p>
+          By leveraging MCP, the AI agent possesses deep contextual awareness of local Excel files, enabling error-free, instant execution of enterprise-grade spreadsheet tasks.
+        </p>
+      </div>
+    ),
     githubUrl: '#',
     tech: [
       'MS Excel',
+      'MCP',
       'Python',
-      'AI Scripting',
-      'Data Processing',
+      'AI Agents',
       'Reporting Automation',
     ],
     metrics: [
