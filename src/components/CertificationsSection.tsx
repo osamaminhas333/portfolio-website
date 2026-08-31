@@ -11,17 +11,21 @@ interface Certification {
   details: string;
   category: 'AI / AGENTIC WORKFLOWS' | 'FINANCE / CORE';
   imagePath: string;
+  customLabel?: string;
+  highlightLabel?: boolean;
 }
 
 const certifications: Certification[] = [
   // AI Certificates
   {
-    id: 'ai-1',
-    title: 'Google AI Professional Certificate',
-    issuer: 'Coursera (Google)',
-    details: 'Applied AI & Deep Learning',
+    id: 'ai-3',
+    title: 'AI Automation Engineer with n8n',
+    issuer: 'LearnkartS / Coursera',
+    details: 'Webhooks, APIs, & Workflows',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/google-ai-professional.png'
+    imagePath: '/documents/certificates/ai/ai-automation-engineer-with-n8n.png',
+    customLabel: 'SPECIALISATION',
+    highlightLabel: true
   },
   {
     id: 'ai-2',
@@ -29,15 +33,19 @@ const certifications: Certification[] = [
     issuer: 'Packt / Coursera',
     details: 'Multi-agent system architecture',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/practical-ai-agents-2026.png'
+    imagePath: '/documents/certificates/ai/practical-ai-agents-2026.png',
+    customLabel: 'SPECIALISATION',
+    highlightLabel: true
   },
   {
-    id: 'ai-3',
-    title: 'AI Automation Engineer with n8n',
-    issuer: 'LearnkartS / Coursera',
-    details: 'Webhooks, APIs, & Workflows',
+    id: 'ai-1',
+    title: 'Google AI Professional Certificate',
+    issuer: 'Coursera (Google)',
+    details: 'Applied AI & Deep Learning',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/ai-automation-engineer-with-n8n.png'
+    imagePath: '/documents/certificates/ai/google-ai-professional.png',
+    customLabel: 'SPECIALISATION',
+    highlightLabel: true
   },
   {
     id: 'ai-4',
@@ -45,7 +53,8 @@ const certifications: Certification[] = [
     issuer: 'Anthropic',
     details: 'Structured delegation & LLM foundations',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/ai-fluency-framework-and-foundations.png'
+    imagePath: '/documents/certificates/ai/ai-fluency-framework-and-foundations.png',
+    customLabel: 'AI FLUENCY'
   },
   {
     id: 'ai-5',
@@ -53,7 +62,8 @@ const certifications: Certification[] = [
     issuer: 'Anthropic',
     details: 'Advanced capabilities evaluation',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/ai-fluency-and-capabilities.png'
+    imagePath: '/documents/certificates/ai/ai-fluency-and-capabilities.png',
+    customLabel: 'AI FLUENCY'
   },
   {
     id: 'ai-6',
@@ -61,7 +71,8 @@ const certifications: Certification[] = [
     issuer: 'Anthropic',
     details: 'Core prompt engineering',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/claude-101.png'
+    imagePath: '/documents/certificates/ai/claude-101.png',
+    customLabel: 'CLAUDE EXPERTISE'
   },
   {
     id: 'ai-7',
@@ -69,7 +80,8 @@ const certifications: Certification[] = [
     issuer: 'Anthropic',
     details: 'Production-grade AI coding harnesses',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/claude-code-101.png'
+    imagePath: '/documents/certificates/ai/claude-code-101.png',
+    customLabel: 'CLAUDE CODE MASTERY'
   },
   {
     id: 'ai-8',
@@ -77,7 +89,8 @@ const certifications: Certification[] = [
     issuer: 'Anthropic',
     details: 'Tool usage and standard MCP protocols',
     category: 'AI / AGENTIC WORKFLOWS',
-    imagePath: '/documents/certificates/ai/introduction-to-mcp.png'
+    imagePath: '/documents/certificates/ai/introduction-to-mcp.png',
+    customLabel: 'MCP INTRODUCTION'
   },
 
   // CA Certificates
@@ -197,8 +210,8 @@ export const CertificationsSection: React.FC = () => {
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
                 <div className="flex flex-col h-full justify-between">
                   <div>
-                    <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
-                      // {cert.category}
+                    <span className={`block uppercase mb-3 ${cert.highlightLabel ? 'text-[11px] font-bold font-sans tracking-[0.35em] text-[#F3DBB3] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]' : 'text-[9px] font-mono tracking-[0.25em] text-[#D4AF37]'}`}>
+                      // {cert.customLabel || cert.category}
                     </span>
                     <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
                       {cert.title}
@@ -251,8 +264,8 @@ export const CertificationsSection: React.FC = () => {
                   <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
                   <div className="flex flex-col h-full justify-between relative z-10">
                     <div>
-                      <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
-                        // {cert.category} {isCaMain && ' // CORE CREDENTIAL'}
+                      <span className={`block uppercase mb-3 ${cert.highlightLabel ? 'text-[11px] font-bold font-sans tracking-[0.35em] text-[#F3DBB3] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]' : 'text-[9px] font-mono tracking-[0.25em] text-[#D4AF37]'}`}>
+                        // {cert.customLabel || cert.category} {isCaMain && ' // CORE CREDENTIAL'}
                       </span>
                       <h3 className={`text-2xl sm:text-3xl tracking-wide leading-tight mb-2 transition-colors font-bebas ${
                         isCaMain ? 'text-[#F3DBB3]' : 'text-white group-hover:text-[#F7E7C4]'
