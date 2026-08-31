@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import ScrollStack, { ScrollStackItem } from './ui/ScrollStack';
+import ScrollStack, { ScrollStackItem, ScrollStackRef } from './ui/ScrollStack';
 
 interface Project {
   number: string;
@@ -223,10 +223,11 @@ const projects: Project[] = [
 ];
 
 export const ProjectsSection: React.FC = () => {
-  const scrollToProject = (id: string) => {
-    const el = document.getElementById(`project-${id}`);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const scrollStackRef = useRef<ScrollStackRef>(null);
+
+  const scrollToProject = (index: number) => {
+    if (scrollStackRef.current) {
+      scrollStackRef.current.scrollToItem(index);
     }
   };
 
@@ -289,6 +290,7 @@ export const ProjectsSection: React.FC = () => {
           {/* LEFT: Project Cards */}
           <div className="lg:col-span-8 xl:col-span-9">
             <ScrollStack
+              ref={scrollStackRef}
               itemDistance={20}
               itemScale={0.035}
               itemStackDistance={18}
@@ -391,18 +393,15 @@ export const ProjectsSection: React.FC = () => {
                 // PROJECT DIRECTORY
               </span>
               <div className="relative pl-6 border-l border-[#8C6D4F]/20">
-                {projects.map((project) => (
+                {projects.map((project, i) => (
                   <div 
                     key={project.title} 
                     className="relative mb-6 group cursor-pointer" 
-                    onClick={() => scrollToProject(project.number)}
+                    onClick={() => scrollToProject(i)}
                   >
                     {/* Hover indicator dot */}
                     <div className="absolute -left-[29px] top-1.5 w-2 h-2 rounded-full border border-[#8C6D4F]/40 bg-black group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] transition-all duration-300" />
                     
-                    <span className="text-[9.5px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors block mb-1">
-                      {project.number} // {project.category}
-                    </span>
                     <h5 className="text-[13px] font-medium tracking-wide text-[#A8988B] group-hover:text-[#F7E7C4] transition-colors uppercase">
                       {project.title}
                     </h5>

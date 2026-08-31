@@ -34,7 +34,11 @@ export interface ScrollStackProps {
   onStackComplete?: () => void;
 }
 
-const ScrollStack: React.FC<ScrollStackProps> = ({
+export interface ScrollStackRef {
+  scrollToItem: (index: number) => void;
+}
+
+const ScrollStack = React.forwardRef<ScrollStackRef, ScrollStackProps>(({
   children,
   className = '',
   itemDistance = 80,
@@ -47,7 +51,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   blurAmount = 0,
   useWindowScroll = true,
   onStackComplete,
-}) => {
+}, ref) => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const stackCompletedRef = useRef(false);
   const animationFrameRef = useRef<number | null>(null);
@@ -69,6 +73,24 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     }
     return typeof value === 'number' ? value : parseFloat(value);
   }, []);
+
+  React.useImperativeHandle(ref, () => ({
+    scrollToItem: (index: number) => {
+      const cardTop = initialTopsRef.current[index];
+      if (cardTop === undefined) return;
+      const containerHeight = useWindowScroll ? window.innerHeight : (scrollerRef.current?.clientHeight || 0);
+      const stackPositionPx = parsePercentage(stackPosition, containerHeight);
+      const triggerStart = cardTop - stackPositionPx - itemStackDistance * index;
+      
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(triggerStart, { offset: 0, duration: 1.2 });
+      } else if (useWindowScroll) {
+        window.scrollTo({ top: triggerStart, behavior: 'smooth' });
+      } else if (scrollerRef.current) {
+        scrollerRef.current.scrollTo({ top: triggerStart, behavior: 'smooth' });
+      }
+    }
+  }));
 
   const getScrollData = useCallback(() => {
     if (useWindowScroll) {
@@ -283,6 +305,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       </div>
     </div>
   );
-};
+});
+
+ScrollStack.displayName = 'ScrollStack';
 
 export default ScrollStack;
