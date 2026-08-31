@@ -36,3 +36,19 @@ Running log: date · decision · reason
 
 - **Decision:** Updated various skills and experience titles (e.g. CA Finalist, Mirofish, Claude Mem, Obsidian).
 - **Reason:** User requested specific additions to perfectly align the portfolio with their most recent tooling and credentials.
+
+## 2026-08-31
+- **Decision:** Switched Hero section background video sizing back to \h-screen w-auto max-w-none origin-right\.
+- **Reason:** To preserve the original cinematic framing (e.g. keeping the laptop/car fully in view on the right side), prioritizing artistic layout over strict text non-overlapping on extreme zoom.
+
+- **Decision:** Rewrote Project descriptions to emphasize Agentic Workflows (Odoo, QuickBooks, Excel) using bulleted lists, and prioritized them at the top of the deck.
+- **Reason:** To explicitly frame the portfolio around elite AI Agent Engineering and Automation capabilities.
+
+- **Decision:** Removed 'Architecture Metrics' from Project cards and added a sticky right-side 'Project Directory' timeline navigation.
+- **Reason:** Cleaned up card space for 'View Deployment' tutorial videos, and provided users a way to instantly jump to a specific project without scrolling the entire deck.
+
+- **Decision:** Hooked the new sidebar navigation clicks directly into the \Lenis\ instance inside \ScrollStack\.
+- **Reason:** Native \scrollIntoView()\ was being blocked by Lenis's smooth scrolling loop. Using \lenis.scrollTo()\ ensures smooth snapping directly to the card's trigger position.
+
+- **Decision:** Fixed CA Certificate Image Paths from \.png\ to \.jpeg\.
+- **Reason:** The certificates were resolving as black/blank in the modal due to incorrect hardcoded extensions.

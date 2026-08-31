@@ -1,6 +1,6 @@
 # Cinematic Portfolio - Current State & Memory Bank
 
-**Date:** 2026-08-30
+**Date:** 2026-08-31
 **Purpose:** This document serves as the memory bank for future agents working on this repository. It contains the exact state of the project, architectural decisions, and custom modifications made to match the reference video perfectly. Read this before making any new amendments.
 
 ## 1. Project Architecture & Stack
@@ -20,51 +20,39 @@
 
 ## 3. Core Components & Structure
 The entire portfolio is rendered as a single-page scrolling narrative in `src/app/page.tsx`.
-*Note: Per the owner's explicit request to strictly match the reference video ("jsi reference video mh thi wsi kr do"), the content is currently hardcoded within the components rather than extracted from a dynamic `content/` layer. Do not extract to `content/` unless explicitly instructed to revert.*
+*Note: Per the owner's explicit request to strictly match the reference video, the content is currently hardcoded within the components rather than extracted from a dynamic content/ layer.*
 
 ### `HeroSection.tsx`
 - Fullscreen background video LCP (`public/media/hero.mp4`).
-- Headline: "A CA FINALIST WHO BUILDS AGENTIC SYSTEMS".
-- Spinning `watermark.png` floating in the background.
+- Video layout is strictly anchored to the right (`h-screen w-auto origin-right`) to preserve cinematic framing of the laptop/car assets.
 
 ### `AboutSection.tsx`
 - Displays the enhanced portrait (`public/media/enhanced.png`).
-- **Technical Note:** The Next.js `<Image fill />` requires the parent container to have a strict height. The parent uses `aspect-[4/5] min-h-[487px]` to prevent the height from collapsing to 0 during rendering.
-- Features dynamic 3D tilt physics (`useSpring`) and holographic spotlights based on mouse movement.
-- Stat updated to "12+" Agent Harnesses.
+- Profile description rewritten to emphasize elite financial rigor (CA) + advanced artificial intelligence intersection.
 
 ### `ProjectsSection.tsx` & `ScrollStack.tsx`
-- Contains 7 AI/Automation projects (including the new Automated MS Excel project).
+- Contains 7 AI/Automation projects, prioritizing Odoo, QuickBooks, and Automated MS Excel.
+- Descriptions utilize bulleted lists to explicitly outline agentic capabilities.
+- **Project Directory Navigation:** A right-aligned sticky timeline sidebar allows users to click and jump directly to specific projects without scrolling the whole deck. Clicks are hooked into `Lenis` (`lenisRef.current.scrollTo(triggerStart)`) for smooth native operation.
 - **ScrollStack Mechanism:** The component `ScrollStack.tsx` pins cards as you scroll down.
-- **Dynamic Math Fix:** The original reference repo was hardcoded for exactly 4 cards. To support 7+ cards without them growing out of bounds (scale > 1.0), the math was dynamically updated:
-  - `itemStackDistance={18}` (tighter stack gap).
-  - `baseScale = 1 - (projects.length - 1) * 0.035` (ensures the last card is always exactly `1.0` scale).
-  - `padding-bottom: 80vh;` in `ScrollStack.css` (provides a longer scrolling runway).
-- **3D Hover Flip:** Each project card inside the stack is built as a 3D flip card (`[transform-style:preserve-3d]`). The front face shows the title/category, and the back face (`rotateX(180deg)`) reveals the description, tech stack pills, and metrics.
+- **3D Hover Flip:** Each project card inside the stack is built as a 3D flip card. The back face reveals the description, tech stack pills, and a "View Deployment" button (Architecture Metrics were removed to clean up space).
 
 ### `SkillsSection.tsx`
-- A Bento grid displaying competencies.
-- Added various specific skills per owner request: OpenClaw, Mirofish, Claude Mem, Obsidian, DeepSeek Harness, OMP, Grok Bot.
-- The 4th card was manually updated to `"AUDIT, ASSURANCE, SUSTAINABILITY & LEASE"` and redundant pills were removed to ensure cleaner reading.
+- A Bento grid displaying competencies with AI/Automation tooling front and center.
 
 ### `ExperienceSection.tsx`
-- Cinematic timeline.
-- Updated organizations for Sustainability Associate and Audit Associate to `"PETER & CO. CHARTERED ACCOUNTANTS"`.
-- Added `"AI AUTOMATION ENGINEER"` role at the top, dated `DECEMBER 2025 - PRESENT`.
-- Simplified `"CA INTER..."` to `"CA FINALIST"`.
+- Cinematic timeline. Trailing text removed from the CA Finalist block for succinctness.
 
 ### `CertificationsSection.tsx`
 - Bespoke grid for AI & Finance certifications.
-- 4 new Sustainability/IFRS certificates were added and injected into the grid data.
+- CA certificate category labeled "CA CERTIFICATES AND QUALIFICATION".
+- Image paths corrected to `.jpeg` to ensure accurate modal previews.
 
 ### `ContactSection.tsx`
-- Footer section ported from the cinematic reference.
-- **Backend-less Email Delivery:** Uses `fetch` to POST form data to `https://formsubmit.co/ajax/osama.minhas111@gmail.com`. This allows real email delivery while preserving the `output: 'export'` static architecture.
+- Instagram handle updated to `@osamabuilds_` with custom `subText` pointing users to demo videos.
+- Uses `fetch` to POST form data to Formsubmit.co.
 
 ## 4. Next Steps & Future Amendments
 - If the owner requests a new project to be added, simply append it to the `projects` array in `ProjectsSection.tsx`. The `ScrollStack` math will dynamically adjust `baseScale` automatically.
-- If the owner requests a new certificate, append it to `CertificationsSection.tsx` and place the image/PDF in the `public/` directory.
-- Maintain the exact CSS styles (gradients, blur shadows, text-shadows) to preserve the cinematic/studio lighting effect. Do not revert to standard flat web UI.
-
----
-*End of Memory State.*
+- Ensure any programmatic scrolling (e.g. jumping to sections) integrates with `Lenis` rather than native `scrollIntoView` to avoid scroll hijacking conflicts.
+- Maintain the exact CSS styles (gradients, blur shadows, text-shadows) to preserve the cinematic/studio lighting effect.
