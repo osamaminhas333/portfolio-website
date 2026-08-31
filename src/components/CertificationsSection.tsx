@@ -108,7 +108,7 @@ const certifications: Certification[] = [
     title: 'Workshop On Building Sustainability (S1, S2)',
     issuer: 'SMP Committee of ICAP',
     details: 'Sustainability & ESG Reporting',
-    category: 'FINANCE / SUSTAINABILITY',
+    category: 'FINANCE / CORE',
     imagePath: '/documents/certificates/ca/icap-smp-building-sustainability.jpeg',
     customLabel: 'SUSTAINABILITY REPORTING'
   },
@@ -117,7 +117,7 @@ const certifications: Certification[] = [
     title: 'Integrated Sustainability Disclosures',
     issuer: 'ICAP',
     details: 'IFRS S1 and S2 Integration',
-    category: 'FINANCE / SUSTAINABILITY',
+    category: 'FINANCE / CORE',
     imagePath: '/documents/certificates/ca/ifrs-04-integrated-sustainability-disclosures.png',
     customLabel: 'SUSTAINABILITY REPORTING'
   },
@@ -126,7 +126,7 @@ const certifications: Certification[] = [
     title: 'Introduction to IFRS S1',
     issuer: 'ICAP',
     details: 'General Requirements for Disclosure',
-    category: 'FINANCE / SUSTAINABILITY',
+    category: 'FINANCE / CORE',
     imagePath: '/documents/certificates/ca/ifrs-02-introduction-s1.png',
     customLabel: 'SUSTAINABILITY REPORTING'
   },
@@ -135,7 +135,7 @@ const certifications: Certification[] = [
     title: 'Introduction to IFRS S2',
     issuer: 'ICAP',
     details: 'Climate-related Disclosures',
-    category: 'FINANCE / SUSTAINABILITY',
+    category: 'FINANCE / CORE',
     imagePath: '/documents/certificates/ca/ifrs-03-introduction-s2.png',
     customLabel: 'SUSTAINABILITY REPORTING'
   }
