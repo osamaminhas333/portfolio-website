@@ -26,8 +26,7 @@ const certifications: Certification[] = [
     category: 'AI / AGENTIC WORKFLOWS',
     imagePath: '/documents/certificates/ai/ai-automation-engineer-with-n8n.png',
     customLabel: 'AUTOMATION ENGINEER',
-    subLabel: '(7 Courses)',
-    highlightLabel: true
+    subLabel: '(7 Courses)'
   },
   {
     id: 'ai-2',
@@ -36,8 +35,7 @@ const certifications: Certification[] = [
     details: 'Multi-agent system architecture',
     category: 'AI / AGENTIC WORKFLOWS',
     imagePath: '/documents/certificates/ai/practical-ai-agents-2026.png',
-    customLabel: 'AGENTIC WORKFLOW',
-    highlightLabel: true
+    customLabel: 'AGENTIC WORKFLOW'
   },
   {
     id: 'ai-1',
@@ -47,8 +45,7 @@ const certifications: Certification[] = [
     category: 'AI / AGENTIC WORKFLOWS',
     imagePath: '/documents/certificates/ai/google-ai-professional.png',
     customLabel: 'GOOGLE AI MASTERY',
-    subLabel: '(7 Courses)',
-    highlightLabel: true
+    subLabel: '(7 Courses)'
   },
   {
     id: 'ai-4',
