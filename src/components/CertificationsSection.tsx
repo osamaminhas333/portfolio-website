@@ -1,7 +1,8 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface Certification {
   id: string;
@@ -9,82 +10,125 @@ interface Certification {
   issuer: string;
   details: string;
   category: 'AI / AGENTIC WORKFLOWS' | 'FINANCE / CORE';
+  imagePath: string;
 }
 
 const certifications: Certification[] = [
+  // AI Certificates
   {
-    id: 'cert-1',
+    id: 'ai-1',
     title: 'Google AI Professional Certificate',
     issuer: 'Coursera (Google)',
-    details: '7 Courses in Applied AI & Deep Learning',
+    details: 'Applied AI & Deep Learning',
     category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/google-ai-professional.png'
   },
   {
-    id: 'cert-2',
+    id: 'ai-2',
     title: 'Practical AI Agents 2026: Build Agentic Workflows',
     issuer: 'Packt / Coursera',
-    details: 'Multi-agent system architecture & deployment',
+    details: 'Multi-agent system architecture',
     category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/practical-ai-agents-2026.png'
   },
   {
-    id: 'cert-3',
+    id: 'ai-3',
     title: 'AI Automation Engineer with n8n',
     issuer: 'LearnkartS / Coursera',
-    details: '7 Courses — Webhooks, APIs, & n8n Workflows',
+    details: 'Webhooks, APIs, & Workflows',
     category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/ai-automation-engineer-with-n8n.png'
   },
   {
-    id: 'cert-4',
+    id: 'ai-4',
     title: 'AI Fluency: Framework & Foundations',
     issuer: 'Anthropic',
-    details: 'Structured delegation, prompt architecture',
+    details: 'Structured delegation & LLM foundations',
     category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/ai-fluency-framework-and-foundations.png'
   },
   {
-    id: 'cert-5',
-    title: 'Claude Code 101 & Claude 101',
+    id: 'ai-5',
+    title: 'AI Fluency and Capabilities',
+    issuer: 'Anthropic',
+    details: 'Advanced capabilities evaluation',
+    category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/ai-fluency-and-capabilities.png'
+  },
+  {
+    id: 'ai-6',
+    title: 'Claude 101',
+    issuer: 'Anthropic',
+    details: 'Core prompt engineering',
+    category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/claude-101.png'
+  },
+  {
+    id: 'ai-7',
+    title: 'Claude Code 101',
     issuer: 'Anthropic',
     details: 'Production-grade AI coding harnesses',
     category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/claude-code-101.png'
   },
   {
-    id: 'cert-6',
+    id: 'ai-8',
+    title: 'Introduction To Model Context Protocol',
+    issuer: 'Anthropic',
+    details: 'Tool usage and standard MCP protocols',
+    category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/introduction-to-mcp.png'
+  },
+
+  // CA Certificates
+  {
+    id: 'ca-1',
     title: 'Chartered Accountancy (CA Inter)',
     issuer: 'Institute of Chartered Accountants of Pakistan',
     details: 'AFC & CAF Qualified — Rigorous Audit Discipline',
     category: 'FINANCE / CORE',
+    imagePath: '/documents/certificates/ca/ca-inter.jpeg'
   },
   {
-    id: 'cert-7',
-    title: 'Workshop On Building Sustainability',
+    id: 'ca-2',
+    title: 'Workshop On Building Sustainability (S1, S2)',
     issuer: 'SMP Committee of ICAP',
     details: 'Sustainability & ESG Reporting',
     category: 'FINANCE / CORE',
+    imagePath: '/documents/certificates/ca/icap-s1-s2.jpeg'
   },
   {
-    id: 'cert-8',
-    title: 'Integrated sustainability disclosures',
+    id: 'ca-3',
+    title: 'Integrated Sustainability Disclosures',
     issuer: 'IFRS',
     details: 'IFRS Sustainability Standards',
     category: 'FINANCE / CORE',
+    imagePath: '/documents/certificates/ca/integrated-sustainability-disclosures.png'
   },
   {
-    id: 'cert-9',
+    id: 'ca-4',
     title: 'Introduction to IFRS S1',
     issuer: 'IFRS',
     details: 'General Requirements for Disclosure of Sustainability-related Financial Information',
     category: 'FINANCE / CORE',
+    imagePath: '/documents/certificates/ca/ifrs-s1.png'
   },
   {
-    id: 'cert-10',
+    id: 'ca-5',
     title: 'Introduction to IFRS S2',
     issuer: 'IFRS',
     details: 'Climate-related Disclosures',
     category: 'FINANCE / CORE',
-  },
+    imagePath: '/documents/certificates/ca/ifrs-s2.png'
+  }
 ];
 
 export const CertificationsSection: React.FC = () => {
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
+
+  const aiCerts = certifications.filter(c => c.category === 'AI / AGENTIC WORKFLOWS');
+  const caCerts = certifications.filter(c => c.category === 'FINANCE / CORE');
+
   return (
     <section
       id="certifications"
@@ -132,51 +176,142 @@ export const CertificationsSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* Cinematic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.7, delay: index * 0.1 }}
-              className="relative p-7 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C]/80 backdrop-blur-md group hover:border-[#D4AF37]/70 hover:bg-[#1A1612] transition-all duration-500 cursor-pointer overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
-            >
-              {/* Top Golden Light Flare */}
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
-
-              <div className="flex flex-col h-full justify-between">
-                <div>
-                  <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
-                    // {cert.category}
-                  </span>
-                  
-                  <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
-                    {cert.title}
-                  </h3>
-                  
-                  <span className="block text-xs font-medium tracking-wider text-[#8C6D4F] uppercase font-sans mb-4">
-                    {cert.issuer}
-                  </span>
+        {/* AI CERTIFICATES */}
+        <div className="mb-12">
+          <h3 className="text-xl sm:text-2xl font-light tracking-[0.2em] uppercase text-[#F3DBB3] mb-8 font-bebas border-b border-[#8C6D4F]/30 pb-4">
+            AI CERTIFICATIONS
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {aiCerts.map((cert, index) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.7, delay: index * 0.1 }}
+                onClick={() => setSelectedCert(cert)}
+                className="relative p-7 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C]/80 backdrop-blur-md group hover:border-[#D4AF37]/70 hover:bg-[#1A1612] transition-all duration-500 cursor-pointer overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
+                      // {cert.category}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
+                      {cert.title}
+                    </h3>
+                    <span className="block text-xs font-medium tracking-wider text-[#8C6D4F] uppercase font-sans mb-4">
+                      {cert.issuer}
+                    </span>
+                  </div>
+                  <div className="pt-5 border-t border-[#8C6D4F]/20 mt-auto">
+                    <p className="text-[11px] sm:text-xs text-[#A8988B] font-light leading-relaxed font-sans">
+                      {cert.details}
+                    </p>
+                    <span className="block mt-4 text-[10px] text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity tracking-[0.2em] font-medium uppercase">
+                      VIEW CERTIFICATE ↗
+                    </span>
+                  </div>
                 </div>
-                
-                <div className="pt-5 border-t border-[#8C6D4F]/20 mt-auto">
-                  <p className="text-[11px] sm:text-xs text-[#A8988B] font-light leading-relaxed font-sans">
-                    {cert.details}
-                  </p>
-                </div>
-              </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-            </motion.div>
-          ))}
+        {/* CA CERTIFICATES */}
+        <div>
+          <h3 className="text-xl sm:text-2xl font-light tracking-[0.2em] uppercase text-[#F3DBB3] mb-8 font-bebas border-b border-[#8C6D4F]/30 pb-4 mt-16">
+            CA CERTIFICATES
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caCerts.map((cert, index) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.7, delay: index * 0.1 }}
+                onClick={() => setSelectedCert(cert)}
+                className="relative p-7 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C]/80 backdrop-blur-md group hover:border-[#D4AF37]/70 hover:bg-[#1A1612] transition-all duration-500 cursor-pointer overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/30 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <span className="block text-[9px] font-mono tracking-[0.25em] uppercase text-[#D4AF37] mb-3">
+                      // {cert.category}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl text-white tracking-wide leading-tight mb-2 group-hover:text-[#F7E7C4] transition-colors font-bebas">
+                      {cert.title}
+                    </h3>
+                    <span className="block text-xs font-medium tracking-wider text-[#8C6D4F] uppercase font-sans mb-4">
+                      {cert.issuer}
+                    </span>
+                  </div>
+                  <div className="pt-5 border-t border-[#8C6D4F]/20 mt-auto">
+                    <p className="text-[11px] sm:text-xs text-[#A8988B] font-light leading-relaxed font-sans">
+                      {cert.details}
+                    </p>
+                    <span className="block mt-4 text-[10px] text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity tracking-[0.2em] font-medium uppercase">
+                      VIEW CERTIFICATE ↗
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>
+
+      {/* MODAL POPUP */}
+      <AnimatePresence>
+        {selectedCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCert(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-md cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()} 
+              className="relative max-w-5xl w-full max-h-[90vh] bg-[#0A0806] border border-[#8C6D4F]/40 p-2 shadow-[0_0_50px_rgba(212,175,55,0.15)] flex flex-col rounded-sm overflow-hidden"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-[#120F0C] border border-[#8C6D4F]/50 rounded-full flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-colors z-20 cursor-pointer"
+              >
+                ✕
+              </button>
+              
+              <div className="relative w-full h-[70vh] bg-[#0A0806]">
+                <Image
+                  src={selectedCert.imagePath}
+                  alt={selectedCert.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  priority
+                />
+              </div>
+              <div className="p-4 text-center border-t border-[#8C6D4F]/20 bg-[#0A0806]">
+                <h4 className="text-xl sm:text-2xl text-[#F3DBB3] font-bebas tracking-widest">{selectedCert.title}</h4>
+                <p className="text-[10px] sm:text-xs text-[#A8988B] font-mono tracking-[0.2em] uppercase mt-1">{selectedCert.issuer}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 };
