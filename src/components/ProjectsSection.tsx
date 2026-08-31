@@ -17,110 +17,6 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    title: 'Autonomous Crypto Trading Agent',
-    category: 'AI / ALGORITHMIC TRADING',
-    description: (
-      <div className="space-y-3">
-        <p>
-          A 24/7 unattended algorithmic trading system built on a hybrid architecture of agent harnesses and workflow automation. This setup ensures continuous market operation and risk management:
-        </p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Control & Logic:</strong> Developed and controlled via Claude Code / OpenCode (Harness).</li>
-          <li><strong>Execution Engine:</strong> Trading automation and data pipelines run entirely on n8n.</li>
-          <li><strong>Live Reporting:</strong> Instant trade alerts and P&L summaries via Telegram.</li>
-          <li><strong>Risk Management:</strong> Autonomous data ingestion and strict persistent session state.</li>
-        </ul>
-      </div>
-    ),
-    githubUrl: '#', // Provide GitHub link if available, or just leave as '#'
-    tech: [
-      'Claude Code / OpenCode',
-      'n8n',
-      'Telegram API',
-      'Python',
-      'Algorithmic Trading',
-    ],
-    metrics: [
-      { label: 'OPERATION', value: '24/7 Unattended' },
-      { label: 'ENGINE', value: 'Claude Code' },
-      { label: 'STATE', value: 'Persistent Sessions' },
-    ],
-  },
-  {
-    number: '02',
-    title: 'Content Factory — Content Pipeline',
-    category: 'AUTOMATION / MULTI-AGENT SYSTEM',
-    description: (
-      <div className="space-y-3">
-        <p>
-          An end-to-end n8n workflow factory functioning entirely as an autonomous multi-agent system. This robust content creation pipeline handles the complete lifecycle of digital media production and distribution:
-        </p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Research:</strong> Autonomous trend analysis and topic gathering.</li>
-          <li><strong>Scripting:</strong> AI-driven generation of tailored video scripts.</li>
-          <li><strong>Asset Creation:</strong> Automated video and image generation pipeline.</li>
-          <li><strong>Distribution:</strong> Direct uploading to TikTok, Facebook, YouTube, and Instagram.</li>
-        </ul>
-      </div>
-    ),
-    githubUrl: '#',
-    tech: [
-      'n8n',
-      'Webhooks',
-      'REST APIs',
-      'Multi-Agent System',
-      'Scripting Automation',
-    ],
-    metrics: [
-      { label: 'ARCHITECTURE', value: 'Workflow Factory' },
-      { label: 'PIPELINE', value: 'Fully Autonomous' },
-      { label: 'INTEGRATION', value: 'Multi-Platform' },
-    ],
-  },
-  {
-    number: '03',
-    title: 'Zero-Cost Video Gen Stack',
-    category: 'OPEN-WEIGHT AI / SERVERLESS GPU',
-    description:
-      'Open-weight Wan 2.2 video model deployed on ComfyUI over serverless GPU (Modal, A100) with authenticated endpoints and budget controls, wired into n8n — replacing paid video APIs at near-zero marginal cost.',
-    githubUrl: '#',
-    tech: [
-      'Wan 2.2',
-      'ComfyUI',
-      'Modal (A100)',
-      'n8n',
-      'Serverless GPU',
-      'API Authentication',
-    ],
-    metrics: [
-      { label: 'MODEL', value: 'Wan 2.2 (Open-Weight)' },
-      { label: 'INFRASTRUCTURE', value: 'Serverless A100' },
-      { label: 'COST EFFICIENCY', value: 'Near-Zero Marginal' },
-    ],
-  },
-  {
-    number: '04',
-    title: 'Self-Hosted Agent Environment',
-    category: 'LOCAL DEPLOYMENT / CONTAINERIZATION',
-    description:
-      'Deployed a comprehensive self-hosted environment integrating OpenHands, n8n, OpenClaw, Agent Harnesses, OMP, ComfyUI, MCP, Odoo, and PostgreSQL under Docker. Configured with persistent volumes, isolated networking, and interchangeable LLM backends for secure, robust local execution.',
-    githubUrl: '#',
-    tech: [
-      'Docker',
-      'Docker Compose',
-      'OpenHands',
-      'WSL2',
-      'Volume Persistence',
-      'LLM Configuration',
-    ],
-    metrics: [
-      { label: 'DEPLOYMENT', value: 'Containerized (Docker)' },
-      { label: 'SECURITY', value: 'Isolated Networking' },
-      { label: 'FLEXIBILITY', value: 'Configurable Backends' },
-    ],
-  },
-  {
-    number: '05',
     title: 'Odoo (ERP) Agentic Automation',
     category: 'ERP / AGENT ORCHESTRATION',
     description: (
@@ -154,7 +50,7 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '06',
+    number: '02',
     title: 'QuickBooks AI Bookkeeping Agent',
     category: 'ACCOUNTING / AI AUTOMATION',
     description: (
@@ -187,7 +83,7 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '07',
+    number: '03',
     title: 'Automated MS Excel Office Work',
     category: 'OFFICE AUTOMATION / AI SCRIPTING',
     description: (
@@ -218,6 +114,110 @@ const projects: Project[] = [
       { label: 'OPERATION', value: 'Repetitive Task Automation' },
       { label: 'ENGINE', value: 'AI Scripts' },
       { label: 'IMPACT', value: 'Manual Work Eliminated' },
+    ],
+  },
+  {
+    number: '04',
+    title: 'Autonomous Crypto Trading Agent',
+    category: 'AI / ALGORITHMIC TRADING',
+    description: (
+      <div className="space-y-3">
+        <p>
+          A 24/7 unattended algorithmic trading system built on a hybrid architecture of agent harnesses and workflow automation. This setup ensures continuous market operation and risk management:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Control & Logic:</strong> Developed and controlled via Claude Code / OpenCode (Harness).</li>
+          <li><strong>Execution Engine:</strong> Trading automation and data pipelines run entirely on n8n.</li>
+          <li><strong>Live Reporting:</strong> Instant trade alerts and P&L summaries via Telegram.</li>
+          <li><strong>Risk Management:</strong> Autonomous data ingestion and strict persistent session state.</li>
+        </ul>
+      </div>
+    ),
+    githubUrl: '#',
+    tech: [
+      'Claude Code / OpenCode',
+      'n8n',
+      'Telegram API',
+      'Python',
+      'Algorithmic Trading',
+    ],
+    metrics: [
+      { label: 'OPERATION', value: '24/7 Unattended' },
+      { label: 'ENGINE', value: 'Claude Code' },
+      { label: 'STATE', value: 'Persistent Sessions' },
+    ],
+  },
+  {
+    number: '05',
+    title: 'Content Factory — Content Pipeline',
+    category: 'AUTOMATION / MULTI-AGENT SYSTEM',
+    description: (
+      <div className="space-y-3">
+        <p>
+          An end-to-end n8n workflow factory functioning entirely as an autonomous multi-agent system. This robust content creation pipeline handles the complete lifecycle of digital media production and distribution:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
+          <li><strong>Research:</strong> Autonomous trend analysis and topic gathering.</li>
+          <li><strong>Scripting:</strong> AI-driven generation of tailored video scripts.</li>
+          <li><strong>Asset Creation:</strong> Automated video and image generation pipeline.</li>
+          <li><strong>Distribution:</strong> Direct uploading to TikTok, Facebook, YouTube, and Instagram.</li>
+        </ul>
+      </div>
+    ),
+    githubUrl: '#',
+    tech: [
+      'n8n',
+      'Webhooks',
+      'REST APIs',
+      'Multi-Agent System',
+      'Scripting Automation',
+    ],
+    metrics: [
+      { label: 'ARCHITECTURE', value: 'Workflow Factory' },
+      { label: 'PIPELINE', value: 'Fully Autonomous' },
+      { label: 'INTEGRATION', value: 'Multi-Platform' },
+    ],
+  },
+  {
+    number: '06',
+    title: 'Zero-Cost Video Gen Stack',
+    category: 'OPEN-WEIGHT AI / SERVERLESS GPU',
+    description:
+      'Open-weight Wan 2.2 video model deployed on ComfyUI over serverless GPU (Modal, A100) with authenticated endpoints and budget controls, wired into n8n — replacing paid video APIs at near-zero marginal cost.',
+    githubUrl: '#',
+    tech: [
+      'Wan 2.2',
+      'ComfyUI',
+      'Modal (A100)',
+      'n8n',
+      'Serverless GPU',
+      'API Authentication',
+    ],
+    metrics: [
+      { label: 'MODEL', value: 'Wan 2.2 (Open-Weight)' },
+      { label: 'INFRASTRUCTURE', value: 'Serverless A100' },
+      { label: 'COST EFFICIENCY', value: 'Near-Zero Marginal' },
+    ],
+  },
+  {
+    number: '07',
+    title: 'Self-Hosted Agent Environment',
+    category: 'LOCAL DEPLOYMENT / CONTAINERIZATION',
+    description:
+      'Deployed a comprehensive self-hosted environment integrating OpenHands, n8n, OpenClaw, Agent Harnesses, OMP, ComfyUI, MCP, Odoo, and PostgreSQL under Docker. Configured with persistent volumes, isolated networking, and interchangeable LLM backends for secure, robust local execution.',
+    githubUrl: '#',
+    tech: [
+      'Docker',
+      'Docker Compose',
+      'OpenHands',
+      'WSL2',
+      'Volume Persistence',
+      'LLM Configuration',
+    ],
+    metrics: [
+      { label: 'DEPLOYMENT', value: 'Containerized (Docker)' },
+      { label: 'SECURITY', value: 'Isolated Networking' },
+      { label: 'FLEXIBILITY', value: 'Configurable Backends' },
     ],
   },
 ];
