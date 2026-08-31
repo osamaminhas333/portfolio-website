@@ -50,7 +50,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[100vh] flex flex-col overflow-hidden bg-black text-[#E8DFD8] font-sans cursor-none">
+    <section className="relative w-screen h-screen overflow-hidden bg-black text-[#E8DFD8] font-sans cursor-none">
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
@@ -73,7 +73,7 @@ export const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-center"
+          className="h-screen w-auto max-w-none object-cover origin-right md:scale-[1.0] lg:scale-100"
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
@@ -109,7 +109,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ================= 4. CONTENT LAYER ================= */}
-      <div className="relative z-10 flex flex-col justify-between flex-grow w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
+      <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
         
         {/* Navigation Bar */}
         <header className="relative flex items-center justify-between w-full pointer-events-auto">
@@ -155,7 +155,7 @@ export const HeroSection: React.FC = () => {
         </header>
 
         {/* Main Hero Row */}
-        <div className="relative flex flex-col md:flex-row flex-wrap items-center justify-between w-full pt-4 pb-2 my-auto gap-y-12">
+        <div className="relative flex flex-col md:flex-row items-center justify-between w-full pt-4 pb-2 my-auto">
           
           {/* LEFT: Balanced Headline & Actions */}
           <motion.div
