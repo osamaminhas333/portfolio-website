@@ -52,3 +52,6 @@ Running log: date · decision · reason
 
 - **Decision:** Fixed CA Certificate Image Paths from \.png\ to \.jpeg\.
 - **Reason:** The certificates were resolving as black/blank in the modal due to incorrect hardcoded extensions.
+
+- **Decision:** Documented 5 critical engineering mistakes and their corrections in `CURRENT_STATE.md`.
+- **Reason:** To prevent future AI agents (and developers) from repeating the same CSS flexbox, sticky positioning, viewport scaling, and 3D Z-clipping traps.

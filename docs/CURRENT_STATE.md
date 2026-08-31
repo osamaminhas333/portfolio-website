@@ -56,3 +56,27 @@ The entire portfolio is rendered as a single-page scrolling narrative in `src/ap
 - If the owner requests a new project to be added, simply append it to the `projects` array in `ProjectsSection.tsx`. The `ScrollStack` math will dynamically adjust `baseScale` automatically.
 - Ensure any programmatic scrolling (e.g. jumping to sections) integrates with `Lenis` rather than native `scrollIntoView` to avoid scroll hijacking conflicts.
 - Maintain the exact CSS styles (gradients, blur shadows, text-shadows) to preserve the cinematic/studio lighting effect.
+
+
+## 5. Critical Engineering Lessons & Mistake Log (August 31, 2026)
+This section documents bugs encountered and solved during the mobile rigid layout and sticky sidebar fixes. **Do not repeat these mistakes.**
+
+1. **Viewport Zoom Reflow (Mobile)**
+   - *Mistake*: Using `w-screen` and `fixed` layouts to cover the viewport. When users pinch-zoomed on iOS/Safari, the visual viewport shrank, recalculating `w-screen` (which equals `100vw`) and breaking/squishing the entire layout.
+   - *Correction*: Replaced all instances of `w-screen` with `w-full`, and replaced `fixed` background wrappers with `absolute inset-0 w-full h-full`. Added `viewport` lock in Next.js `layout.tsx` (`maximumScale: 1, userScalable: false`). This prevents the layout structure from breaking upon zoom.
+
+2. **Horizontal Overflow / Black Void on Zoom Out**
+   - *Mistake*: Decorative elements (like 600px blur circles) were absolutely positioned in sections (like `ProjectsSection.tsx`) without `overflow-hidden`. This pushed the DOM layout width beyond the 390px mobile screen. When a user zoomed out, they saw half the screen as a black void.
+   - *Correction*: Added `max-width: 100vw !important` and `overscroll-behavior-x: none` to `html, body`. Wrapped large decorative blurs inside `absolute inset-0 overflow-hidden pointer-events-none` containers instead of applying overflow rules directly to the parent section.
+
+3. **Sticky Positioning Breakage (`overflow-hidden`)**
+   - *Mistake*: Tried to fix horizontal overflow by adding `overflow-hidden` to `html`, `body`, or parent section wrappers. This completely disabled `position: sticky` on the Project Directory timeline.
+   - *Correction*: Replaced `overflow-x-hidden` with `overflow-x-clip` in global styles. `overflow-clip` successfully hides horizontal overflow without turning the body into a block formatting scroll container, thereby preserving native `position: sticky` behavior.
+
+4. **Flexbox Collapse to Zero (Next.js Image)**
+   - *Mistake*: Removed hardcoded `min-h-[487px]` from the About section portrait and used `aspect-ratio: 4/5` with `w-full` inside a flexbox `justify-center` container. Because the parent collapsed to fit content, `w-full` calculated as 0, making the image disappear entirely on mobile.
+   - *Correction*: Replaced `w-full` with explicit physical viewport widths `w-[85vw] sm:w-[390px]`. Viewport widths (`vw`) never collapse inside flex containers, guaranteeing the element has a size for the `aspect-ratio` to calculate its height against.
+
+5. **3D Flip (rotateX) Clipping with Overlapping DOM Elements**
+   - *Mistake*: Attempted to make the `ScrollStack` projects appear as a tightly packed cascading deck initially by setting `itemDistance` to a massive negative number (e.g. `-280px`). While they cascaded beautifully in 2D, hovering over a card caused its 3D `rotateX(180deg)` flip to physically slice/clip through the card layered on top of it.
+   - *Correction*: Restored `itemDistance={20}`. 3D physics require physical DOM space to rotate without Z-clipping. If elements need to flip on hover, they must start spaced out.
