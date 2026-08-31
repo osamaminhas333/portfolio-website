@@ -191,7 +191,7 @@ export const HeroSection: React.FC = () => {
               <p
                 className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#C4B29E] font-sans"
               >
-                AI AGENT ENGINEER <span className="text-[#8C6D4F] mx-1">•</span> AUTOMATION <span className="text-[#8C6D4F] mx-1">•</span> CA FINALIST
+                <span className="text-[#F3DBB3] font-semibold tracking-[0.3em] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]">CA FINALIST</span> <span className="text-[#8C6D4F] mx-1">•</span> AI AGENT ENGINEER <span className="text-[#8C6D4F] mx-1">•</span> AUTOMATION
               </p>
             </motion.div>
 
