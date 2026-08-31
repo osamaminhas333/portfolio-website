@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 
 interface Certification {
   id: string;
@@ -192,7 +193,7 @@ export const CertificationsSection: React.FC = () => {
             {cert.details}
           </p>
           <span className="inline-flex items-center mt-4 text-[10px] text-[#D4AF37]/90 group-hover:text-[#F7E7C4] transition-colors duration-300 tracking-[0.2em] font-semibold uppercase">
-            VIEW CERTIFICATE <span className="ml-1 text-[11px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+            VIEW CERTIFICATE <ArrowUpRight size={12} strokeWidth={2.5} className="ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </span>
         </div>
       </div>
