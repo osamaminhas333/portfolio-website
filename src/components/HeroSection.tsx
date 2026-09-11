@@ -114,7 +114,7 @@ export const HeroSection: React.FC = () => {
                 src="/media/watermark.png"
                 alt="Insignia"
                 className="object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.25)]"
-                style={{ width: '7vw', height: '7vw' }}
+                style={{ width: 'max(45px, 7vw)', height: 'max(45px, 7vw)' }}
               />
             </motion.div>
           </div>
@@ -124,7 +124,7 @@ export const HeroSection: React.FC = () => {
       {/* ================= 4. CONTENT LAYER ================= */}
       <div
         className="relative z-10 flex flex-col justify-between h-full w-full pointer-events-none"
-        style={{ padding: '1.5vw 4vw 2vw 4vw' }}
+        style={{ padding: 'max(16px, 1.5vw) max(24px, 4vw) max(20px, 2vw) max(24px, 4vw)' }}
       >
         
         {/* Navigation Bar */}
@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className="font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity font-sans"
-            style={{ fontSize: '0.9vw' }}
+            style={{ fontSize: 'max(14px, 0.9vw)' }}
           >
             OSAMA.
           </a>
@@ -142,7 +142,7 @@ export const HeroSection: React.FC = () => {
           {/* Navigation Links */}
           <nav
             className="hidden md:flex items-center font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2 font-sans"
-            style={{ gap: '2.6vw', fontSize: '0.72vw', letterSpacing: '0.28em' }}
+            style={{ gap: 'max(16px, 2.6vw)', fontSize: 'max(11px, 0.72vw)', letterSpacing: '0.28em' }}
           >
             {navItems.map((item) => (
               <a
@@ -164,10 +164,10 @@ export const HeroSection: React.FC = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className="group flex items-center border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0 font-sans font-light uppercase"
-            style={{ fontSize: '0.72vw', letterSpacing: '0.24em', padding: '0.55vw 1.2vw', gap: '0.4vw' }}
+            style={{ fontSize: 'max(11px, 0.72vw)', letterSpacing: '0.24em', padding: 'max(6px, 0.55vw) max(12px, 1.2vw)', gap: 'max(4px, 0.4vw)' }}
           >
             <span>LET&apos;S TALK</span>
-            <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: '0.6vw' }}>
+            <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: 'max(10px, 0.6vw)' }}>
               ↗
             </span>
           </a>
@@ -182,18 +182,18 @@ export const HeroSection: React.FC = () => {
             initial="hidden"
             animate="visible"
             className="pointer-events-auto z-20 relative"
-            style={{ maxWidth: '42vw' }}
+            style={{ maxWidth: 'max(360px, 42vw)' }}
           >
             {/* Massive Condensed Headline — pure vw, no bounds */}
-            <motion.div variants={fadeUpVariants} className="relative select-none" style={{ marginBottom: '1vw' }}>
+            <motion.div variants={fadeUpVariants} className="relative select-none" style={{ marginBottom: 'max(12px, 1vw)' }}>
               <h1
                 className="tracking-tight uppercase leading-[0.83] font-bebas"
-                style={{ fontSize: '7vw' }}
+                style={{ fontSize: 'max(42px, 7vw)' }}
               >
                 {/* Line 1 */}
                 <span
                   className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]"
-                  style={{ fontSize: '6.2vw' }}
+                  style={{ fontSize: 'max(36px, 6.2vw)' }}
                 >
                   A CA FINALIST
                 </span>
@@ -201,7 +201,7 @@ export const HeroSection: React.FC = () => {
                 {/* Line 2 */}
                 <span
                   className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]"
-                  style={{ fontSize: '6.2vw', marginTop: '0.3vw' }}
+                  style={{ fontSize: 'max(36px, 6.2vw)', marginTop: 'max(4px, 0.3vw)' }}
                 >
                   WHO BUILDS
                 </span>
@@ -209,7 +209,7 @@ export const HeroSection: React.FC = () => {
                 {/* Line 3 */}
                 <span
                   className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]"
-                  style={{ fontSize: '6.2vw', marginTop: '0.3vw' }}
+                  style={{ fontSize: 'max(36px, 6.2vw)', marginTop: 'max(4px, 0.3vw)' }}
                 >
                   AGENTIC SYSTEMS
                 </span>
@@ -217,12 +217,12 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             {/* Subtitle Technologies */}
-            <motion.div variants={fadeUpVariants} style={{ marginBottom: '1vw', marginTop: '2vw' }}>
+            <motion.div variants={fadeUpVariants} style={{ marginBottom: 'max(12px, 1vw)', marginTop: 'max(24px, 2vw)' }}>
               <p
-                className="font-normal uppercase text-[#C4B29E] font-sans"
-                style={{ fontSize: '0.95vw', letterSpacing: '0.28em' }}
+                className="font-normal uppercase text-[#C4B29E] font-sans flex flex-wrap items-center leading-snug"
+                style={{ fontSize: 'max(12px, 0.95vw)', letterSpacing: '0.28em' }}
               >
-                <span className="text-[#F3DBB3] font-semibold drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]" style={{ letterSpacing: '0.3em' }}>CA FINALIST</span> <span className="text-[#8C6D4F]" style={{ margin: '0 0.3vw' }}>•</span> AI AGENT ENGINEER <span className="text-[#8C6D4F]" style={{ margin: '0 0.3vw' }}>•</span> AUTOMATION
+                <span className="text-[#F3DBB3] font-semibold drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]" style={{ letterSpacing: '0.3em' }}>CA FINALIST</span> <span className="text-[#8C6D4F]" style={{ margin: '0 max(6px, 0.5vw)' }}>•</span> AI AGENT ENGINEER <span className="text-[#8C6D4F]" style={{ margin: '0 max(6px, 0.5vw)' }}>•</span> AUTOMATION
               </p>
             </motion.div>
 
@@ -230,7 +230,7 @@ export const HeroSection: React.FC = () => {
             <motion.div
               variants={fadeUpVariants}
               className="font-light text-[#A8988B] tracking-wide font-sans"
-              style={{ fontSize: '1vw', lineHeight: '1.8', maxWidth: '34vw', marginBottom: '1.5vw' }}
+              style={{ fontSize: 'max(14px, 1vw)', lineHeight: '1.8', maxWidth: 'max(340px, 34vw)', marginBottom: 'max(24px, 1.5vw)' }}
             >
               <p>
                 Bridging the deep precision of Accounting and Finance with the autonomous execution of Agentic AI and Automation.
@@ -242,8 +242,8 @@ export const HeroSection: React.FC = () => {
             {/* CTA Buttons */}
             <motion.div
               variants={fadeUpVariants}
-              className="flex flex-row items-center font-sans"
-              style={{ gap: '1vw' }}
+              className="flex flex-row flex-wrap items-center font-sans"
+              style={{ gap: 'max(12px, 1vw)' }}
             >
               {/* Explore My Work CTA */}
               <motion.a
@@ -252,11 +252,11 @@ export const HeroSection: React.FC = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] font-medium uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
-                style={{ fontSize: '0.85vw', letterSpacing: '0.24em', padding: '0.9vw 1.8vw', gap: '0.5vw' }}
+                style={{ fontSize: 'max(12px, 0.85vw)', letterSpacing: '0.24em', padding: 'max(10px, 0.9vw) max(20px, 1.8vw)', gap: 'max(6px, 0.5vw)' }}
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: '0.6vw' }}>
+                <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: 'max(10px, 0.6vw)' }}>
                   ↗
                 </span>
               </motion.a>
@@ -271,10 +271,10 @@ export const HeroSection: React.FC = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] font-medium uppercase transition-all duration-300"
-                style={{ fontSize: '0.85vw', letterSpacing: '0.24em', padding: '0.9vw 1.8vw', gap: '0.4vw' }}
+                style={{ fontSize: 'max(12px, 0.85vw)', letterSpacing: '0.24em', padding: 'max(10px, 0.9vw) max(20px, 1.8vw)', gap: 'max(6px, 0.4vw)' }}
               >
                 <span>DOWNLOAD CV</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5" style={{ fontSize: '0.6vw' }}>
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5" style={{ fontSize: 'max(10px, 0.6vw)' }}>
                   ↓
                 </span>
               </motion.a>
@@ -290,26 +290,26 @@ export const HeroSection: React.FC = () => {
             style={{ right: '12%', top: '50%', transform: 'translateY(-50%)' }}
           >
             {/* 1. Quote Mark */}
-            <span className="text-[#C99E5D] leading-none font-serif" style={{ fontSize: '1.4vw', marginBottom: '0.5vw' }}>
+            <span className="text-[#C99E5D] leading-none font-serif" style={{ fontSize: 'max(24px, 1.4vw)', marginBottom: 'max(8px, 0.5vw)' }}>
               "
             </span>
 
             {/* 2. Compact Two-Line Statement */}
             <div 
               className="font-medium uppercase text-[#E0D3C5] font-sans"
-              style={{ fontSize: '0.65vw', letterSpacing: '0.24em', marginBottom: '0.8vw' }}
+              style={{ fontSize: 'max(11px, 0.65vw)', letterSpacing: '0.24em', marginBottom: 'max(10px, 0.8vw)' }}
             >
               <p>AUTOMATION IS MY CRAFT.</p>
-              <p style={{ marginTop: '0.3vw' }}>ASSURANCE IS MY STANDARD.</p>
+              <p style={{ marginTop: 'max(4px, 0.3vw)' }}>ASSURANCE IS MY STANDARD.</p>
             </div>
 
             {/* 3. Gold Accent Line */}
-            <div className="bg-gradient-to-r from-[#D4AF37] via-[#E8D7C5]/70 to-transparent shadow-[0_0_8px_rgba(212,175,55,0.4)]" style={{ width: '7.3vw', height: '1px', marginBottom: '0.5vw' }} />
+            <div className="bg-gradient-to-r from-[#D4AF37] via-[#E8D7C5]/70 to-transparent shadow-[0_0_8px_rgba(212,175,55,0.4)]" style={{ width: 'max(80px, 7.3vw)', height: '1px', marginBottom: 'max(8px, 0.5vw)' }} />
 
             {/* 4. Fine Monoline Calligraphy Signature */}
             <div 
               className="text-[#D8AB64] font-normal leading-none font-allura tracking-wide"
-              style={{ fontSize: '3.3vw', marginLeft: '-0.1vw' }}
+              style={{ fontSize: 'max(40px, 3.3vw)', marginLeft: 'min(-2px, -0.1vw)' }}
             >
               Osama
             </div>
@@ -317,7 +317,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom Spacer */}
-        <div style={{ height: '0.5vw' }} />
+        <div style={{ height: 'max(8px, 0.5vw)' }} />
       </div>
     </section>
   );
