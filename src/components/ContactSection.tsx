@@ -38,6 +38,22 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+  </svg>
+);
+
 interface Connection {
   id: string;
   label: string;
@@ -71,7 +87,16 @@ const connections: Connection[] = [
     value: '@osamabuilds_',
     icon: <InstagramIcon className="w-5 h-5" />,
     href: 'https://www.instagram.com/osamabuilds_?igsi=MWhwaTJvOTJ6OXJ1Zg%3D%3D&utm_source=qr',
-    subText: 'For demo videos visit here',
+    subText: 'Watch Demo/Projects videos here',
+    clickable: true
+  },
+  {
+    id: 'youtube',
+    label: 'YOUTUBE',
+    value: '@osamaminhas0',
+    icon: <YoutubeIcon className="w-5 h-5" />,
+    href: 'https://www.youtube.com/@osamaminhas0',
+    subText: 'Watch Demo/Projects videos here',
     clickable: true
   },
   {
