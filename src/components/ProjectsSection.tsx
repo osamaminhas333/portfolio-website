@@ -23,20 +23,16 @@ const projects: Project[] = [
     title: 'AI Agent Runs ODOO | Accounting on Autopilot',
     category: 'ERP / AGENT ORCHESTRATION',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
-          One prompt, one run: an AI agent completes a full business cycle inside Odoo ERP on its own. CRM, sales, delivery, invoicing, payment, inventory, purchasing, manufacturing and HR, with zero clicks from me. Built for CA, ACCA, ERP consultants and finance professionals who want to see agentic AI working inside a real ERP, not just answering questions in a chatbot.
+          An AI agent completes a full business cycle inside Odoo ERP automatically from a single prompt. Connected via Model Context Protocol (MCP), Claude executes real Odoo functions directly rather than just generating text.
         </p>
-        <p className="font-semibold text-[#D4AF37]">What happens in this demo:</p>
+        <p className="font-semibold text-[#D4AF37]">Execution covers:</p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
-          <li><strong>CRM:</strong> creates the customer and marks the opportunity as won</li>
-          <li><strong>Sales:</strong> generates and confirms the sales order</li>
-          <li><strong>Delivery:</strong> processes the delivery to the customer</li>
-          <li><strong>Accounting:</strong> creates the invoice and registers the payment</li>
-          <li><strong>Inventory:</strong> updates stock levels</li>
-          <li><strong>Purchasing:</strong> places the purchase order</li>
-          <li><strong>Manufacturing:</strong> runs the manufacturing order</li>
-          <li><strong>HR:</strong> creates a new employee and approves a leave request</li>
+          <li><strong>Sales & CRM:</strong> Lead to won, order confirmation, & delivery</li>
+          <li><strong>Finance:</strong> Auto-invoicing & payment registration</li>
+          <li><strong>Supply Chain:</strong> Inventory sync, POs, & manufacturing</li>
+          <li><strong>HR:</strong> Employee creation & leave approval</li>
         </ul>
       </div>
     ),
@@ -59,15 +55,15 @@ const projects: Project[] = [
     title: 'QuickBooks AI Bookkeeping Agent',
     category: 'ACCOUNTING / AI AUTOMATION',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
-          An advanced AI-powered bookkeeping pipeline seamlessly integrated with QuickBooks Online. This autonomous agent functions as a 24/7 virtual bookkeeper, managing core accounting operations with absolute precision:
+          A 24/7 autonomous bookkeeping agent seamlessly integrated with QuickBooks Online. By automating core essentials, it ensures continuous, error-free accounting records ready for tax compliance:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Bank Reconciliations:</strong> Autonomous matching of bank feeds and transaction coding.</li>
-          <li><strong>Invoice & Receipt Processing:</strong> Automated OCR extraction and precise expense categorization.</li>
-          <li><strong>AP & AR Management:</strong> Tracking vendor bills, sending payment reminders, and managing receivables.</li>
-          <li><strong>Financial Reporting:</strong> Real-time generation of P&L statements, balance sheets, and audit trails.</li>
+          <li><strong>Reconciliations:</strong> Auto-matching of bank feeds and transaction coding.</li>
+          <li><strong>Data Processing:</strong> OCR extraction and exact expense categorization.</li>
+          <li><strong>AP/AR Management:</strong> Tracks vendor bills, sends payment reminders, and manages receivables.</li>
+          <li><strong>Reporting:</strong> Real-time generation of P&L statements, balance sheets, and audit trails.</li>
         </ul>
       </div>
     ),
@@ -89,15 +85,15 @@ const projects: Project[] = [
     title: 'Automated MS Excel Office Work',
     category: 'OFFICE AUTOMATION / AI SCRIPTING',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
-          Transforming manual spreadsheet workflows into an autonomous pipeline by connecting Microsoft Excel directly to AI agents via the Model Context Protocol (MCP). This integration completely eliminates repetitive data entry and complex manual formatting:
+          Eliminates manual spreadsheet workflows by connecting MS Excel to AI agents via MCP. The agent gains deep contextual awareness of local files for instant, enterprise-grade execution:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Data Formatting & Cleansing:</strong> Autonomous parsing, structuring, and cleaning of raw financial datasets.</li>
-          <li><strong>Complex Calculations:</strong> AI-driven execution of dynamic financial modeling and pivot logic.</li>
-          <li><strong>Bulk Reporting:</strong> Automated generation and styling of executive dashboards and summaries.</li>
-          <li><strong>Cross-System Sync:</strong> Seamlessly reading and writing data between Excel and external databases via MCP.</li>
+          <li><strong>Cleansing & Sync:</strong> Autonomous data parsing and external database syncing.</li>
+          <li><strong>Calculations:</strong> AI-driven dynamic financial modeling and pivot logic.</li>
+          <li><strong>Bulk Reporting:</strong> Automated generation and styling of executive dashboards.</li>
+          <li><strong>Cross-System:</strong> Seamlessly reading and writing data between Excel and databases via MCP.</li>
         </ul>
       </div>
     ),
@@ -120,7 +116,7 @@ const projects: Project[] = [
     title: 'Autonomous Crypto Trading Agent',
     category: 'AI / ALGORITHMIC TRADING',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
           A 24/7 unattended algorithmic trading system built on a hybrid architecture of agent harnesses and workflow automation. This setup ensures continuous market operation and risk management:
         </p>
@@ -152,15 +148,18 @@ const projects: Project[] = [
     shortTitle: 'Facebook Bulk Pages Scheduling Automation',
     category: 'SOCIAL MEDIA / AUTOMATION',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p className="font-semibold text-[#D4AF37]">
           Stop scheduling Facebook posts page by page.
         </p>
         <p>
-          This short workflow animation demonstrates an n8n automation for scheduling content across multiple Facebook Pages—from loading content and looping through pages to scheduling posts and updating their status.
+          This n8n automation completely handles bulk content scheduling across multiple Facebook Pages. It loads content, loops through target pages, schedules posts, and updates deployment status autonomously.
         </p>
         <p>
-          Built around bulk content scheduling for social media managers, agencies, and businesses managing multiple pages.
+          Built specifically to scale operations for social media managers and agencies managing multiple accounts.
+        </p>
+        <p className="text-[11px] leading-relaxed text-[#D4AF37] opacity-90">
+          Need a similar setup? Comment “AUTOMATE” on the video and subscribe for more n8n workflows! #n8n #SocialMediaAutomation
         </p>
       </div>
     ),
@@ -184,21 +183,21 @@ const projects: Project[] = [
     title: 'Free AI Video Generator',
     category: 'OPEN-WEIGHT AI / SERVERLESS GPU',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
-          Free AI video generation on autopilot: add a title and a reference image to Google Sheets, and this n8n workflow keeps generating videos in a loop with no paid video API.
+          Zero-cost AI video generation on autopilot: just add a title and reference image to Google Sheets. This n8n workflow loops indefinitely with no paid API.
         </p>
         <p>
-          The model (Wan 2.2 image-to-video on ComfyUI) runs on serverless GPUs through my Modal account, inside Modal's free credits.
+          It runs the Wan 2.2 model via ComfyUI on Modal's serverless GPUs.
         </p>
-        <p className="font-semibold text-[#D4AF37]">How the automation works:</p>
-        <ul className="grid grid-cols-1 sm:grid-cols-1 gap-x-4 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
-          <li><strong>Input:</strong> Google Sheet row = title/prompt + reference image</li>
-          <li><strong>Trigger:</strong> n8n picks the next row automatically</li>
-          <li><strong>Processing:</strong> Image + prompt go to the GPU endpoint on Modal</li>
-          <li><strong>Output:</strong> AI video is generated and returned</li>
-          <li><strong>Iteration:</strong> Loop moves to the next row until the sheet is done</li>
+        <p className="font-semibold text-[#D4AF37]">How it works:</p>
+        <ul className="grid grid-cols-1 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
+          <li><strong>Trigger:</strong> n8n automatically picks the next row from Google Sheets</li>
+          <li><strong>Processing:</strong> Image/prompt sent to Modal GPU endpoint for video generation</li>
         </ul>
+        <p className="text-[11px] leading-relaxed">
+          <strong className="text-[#D4AF37]">Why it matters:</strong> Scales instantly without manual prompting or per-video API costs.
+        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=1zdaOVHCgCY',
@@ -222,20 +221,22 @@ const projects: Project[] = [
     title: 'Stop Clicking. Let AI Control Your Browser!',
     category: 'BROWSER AUTOMATION / AI AGENTS',
     description: (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
           <strong className="text-[#D4AF37]">What if your browser could do the work for you?</strong>
         </p>
         <p>
-          In this demo, I give an AI agent a task—and it browses multiple websites, researches movie recommendations, compiles a list, and sends it through WhatsApp Web.
+          This demo showcases an AI agent researching across multiple websites, compiling a recommendation list, and delivering it via WhatsApp Web.
         </p>
-        <p className="font-semibold text-[#D4AF37]">You’ll see:</p>
+        <p className="font-semibold text-[#D4AF37]">Highlights:</p>
         <ul className="grid grid-cols-1 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
-          <li>How to set up Browser Use with Codex</li>
-          <li>How to connect Chrome through CDP</li>
-          <li>AI researching across websites</li>
-          <li>Research results delivered through WhatsApp</li>
+          <li>Setting up Browser Use with Codex</li>
+          <li>Connecting Chrome through CDP for direct execution</li>
+          <li>End-to-end automation from web research to WhatsApp delivery</li>
         </ul>
+        <p className="text-[11px] leading-relaxed opacity-90 mt-1">
+          Watch the workflow in action—and imagine which repetitive browser task you could automate next.
+        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=KmDZGWrOez0&list=PLVwgOBp4SYOs',
