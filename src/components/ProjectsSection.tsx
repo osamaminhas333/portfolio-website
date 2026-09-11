@@ -439,9 +439,11 @@ export const ProjectsSection: React.FC = () => {
                             {project.title}
                           </h4>
                           <div 
-                            className="flex-1 overflow-y-auto pr-2 overscroll-contain" 
-                            style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F #16120E' }}
+                            className="flex-1 overflow-y-auto pr-2 overscroll-contain relative z-10 pointer-events-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-[#8C6D4F] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-[#16120E]/20" 
+                            style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F transparent', transform: 'translateZ(0)' }}
                             data-lenis-prevent="true"
+                            onWheel={(e) => e.stopPropagation()}
+                            onTouchMove={(e) => e.stopPropagation()}
                           >
                             <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
                               {project.description}
