@@ -7,6 +7,7 @@ import ScrollStack, { ScrollStackItem, ScrollStackRef } from './ui/ScrollStack';
 interface Project {
   number: string;
   title: string;
+  shortTitle?: string;
   category: string;
   description: React.ReactNode;
   githubUrl: string;
@@ -156,33 +157,42 @@ const projects: Project[] = [
   },
   {
     number: '05',
-    title: 'Content Factory — Content Pipeline',
-    category: 'AUTOMATION / MULTI-AGENT SYSTEM',
+    title: 'Facebook Bulk Pages Scheduling Automation | Auto-Schedule Posts to bulk Pages with n8n',
+    shortTitle: 'Facebook Bulk Pages Scheduling Automation',
+    category: 'SOCIAL MEDIA / AUTOMATION',
     description: (
       <div className="space-y-3">
-        <p>
-          An end-to-end n8n workflow factory functioning entirely as an autonomous multi-agent system. This robust content creation pipeline handles the complete lifecycle of digital media production and distribution:
+        <p className="font-semibold text-[#D4AF37]">
+          Stop scheduling Facebook posts page by page.
         </p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Research:</strong> Autonomous trend analysis and topic gathering.</li>
-          <li><strong>Scripting:</strong> AI-driven generation of tailored video scripts.</li>
-          <li><strong>Asset Creation:</strong> Automated video and image generation pipeline.</li>
-          <li><strong>Distribution:</strong> Direct uploading to TikTok, Facebook, YouTube, and Instagram.</li>
-        </ul>
+        <p>
+          This short workflow animation demonstrates an n8n automation for scheduling content across multiple Facebook Pages—from loading content and looping through pages to scheduling posts and updating their status.
+        </p>
+        <p>
+          Built around bulk content scheduling for social media managers, agencies, and businesses managing multiple pages.
+        </p>
+        <p className="text-[11px] leading-relaxed text-[#D4AF37]">
+          Need a similar Facebook automation? Comment “AUTOMATE” and tell us how many pages you manage.
+          <br />
+          Subscribe for more n8n workflows and social media automation demos.
+          <br />
+          #n8n #FacebookAutomation #SocialMediaAutomation
+        </p>
       </div>
     ),
-    githubUrl: '#',
+    githubUrl: 'https://www.youtube.com/watch?v=W3dnLVDcGIA',
+    linkText: 'Watch Project Video',
+    thumbnailUrl: '/media/facebook-bulk-thumbnail.png',
     tech: [
       'n8n',
-      'Webhooks',
-      'REST APIs',
-      'Multi-Agent System',
-      'Scripting Automation',
+      'Facebook API',
+      'Bulk Automation',
+      'Workflow Logic',
     ],
     metrics: [
-      { label: 'ARCHITECTURE', value: 'Workflow Factory' },
-      { label: 'PIPELINE', value: 'Fully Autonomous' },
-      { label: 'INTEGRATION', value: 'Multi-Platform' },
+      { label: 'OPERATION', value: 'Bulk Scheduling' },
+      { label: 'ENGINE', value: 'n8n Workflow' },
+      { label: 'IMPACT', value: 'Time Saved' },
     ],
   },
   {
@@ -346,7 +356,7 @@ export const ProjectsSection: React.FC = () => {
               >
                 <div className="w-1.5 h-1.5 rounded-full border border-[#8C6D4F]/40 bg-black group-active:bg-[#D4AF37] transition-colors mb-2" />
                 <h5 className="text-[9.5px] font-medium tracking-widest text-[#A8988B] group-active:text-[#F7E7C4] transition-colors uppercase leading-[1.4]">
-                  {project.title}
+                  {project.shortTitle || project.title}
                 </h5>
               </div>
             ))}
@@ -489,7 +499,7 @@ export const ProjectsSection: React.FC = () => {
                     <div className="absolute -left-[29px] top-1.5 w-2 h-2 rounded-full border border-[#8C6D4F]/40 bg-black group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] transition-all duration-300" />
                     
                     <h5 className="text-[13px] font-medium tracking-wide text-[#A8988B] group-hover:text-[#F7E7C4] transition-colors uppercase">
-                      {project.title}
+                      {project.shortTitle || project.title}
                     </h5>
                   </div>
                 ))}
