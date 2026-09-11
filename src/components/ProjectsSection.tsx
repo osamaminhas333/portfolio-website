@@ -420,33 +420,55 @@ export const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* ================= BACK FACE ================= */}
-                  <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+                  <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)_translateZ(1px)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)] antialiased">
                     <div className="flex flex-col h-full overflow-hidden">
-                      <div className="flex-1 overflow-y-auto pr-2" style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F #16120E' }}>
-                        <div className="flex flex-col md:flex-row gap-6">
-                          <div className="flex-1">
-                            <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
+                      <div className="flex-1 overflow-hidden flex flex-col md:flex-row gap-6">
+                        
+                        {/* LEFT COLUMN: Title + Scrolling Description */}
+                        <div className="flex-1 flex flex-col overflow-hidden">
+                          <h4 className="shrink-0 text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">
+                            {project.title}
+                          </h4>
+                          <div 
+                            className="flex-1 overflow-y-auto pr-2 overscroll-contain" 
+                            style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F #16120E' }}
+                          >
                             <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
                               {project.description}
                             </div>
                           </div>
-                          
-                          {project.thumbnailUrl && (
-                            <div className="w-full md:w-64 shrink-0 flex flex-col items-center gap-4">
-                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-md border border-[#8C6D4F]/40 hover:border-[#D4AF37] transition-colors relative group">
-                                 <img src={project.thumbnailUrl} alt="Video Thumbnail" className="w-full h-auto aspect-video object-contain bg-black opacity-80 group-hover:opacity-100 transition-opacity" />
-                                 <div className="absolute inset-0 flex items-center justify-center">
-                                   <div className="w-10 h-10 bg-black/60 rounded-full flex items-center justify-center group-hover:bg-[#D4AF37]/90 transition-colors">
-                                     <svg className="w-4 h-4 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                                   </div>
-                                 </div>
-                              </a>
-                            </div>
-                          )}
                         </div>
+                        
+                        {/* RIGHT COLUMN: Thumbnail + Button */}
+                        {project.thumbnailUrl && (
+                          <div className="w-full md:w-64 shrink-0 flex flex-col items-center gap-4">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-md border border-[#8C6D4F]/40 hover:border-[#D4AF37] transition-colors relative group">
+                               <img src={project.thumbnailUrl} alt="Video Thumbnail" className="w-full h-auto aspect-video object-contain bg-black opacity-80 group-hover:opacity-100 transition-opacity" />
+                               <div className="absolute inset-0 flex items-center justify-center">
+                                 <div className="w-10 h-10 bg-black/60 rounded-full flex items-center justify-center group-hover:bg-[#D4AF37]/90 transition-colors">
+                                   <svg className="w-4 h-4 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                                 </div>
+                               </div>
+                            </a>
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group w-full inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
+                            >
+                              <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
+                                Watch Project Video
+                              </span>
+                              <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
+                                ↗
+                              </span>
+                            </a>
+                          </div>
+                        )}
                       </div>
                       
-                      <div className="mt-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-4 border-t border-[#8C6D4F]/20">
+                      {/* FOOTER: Tech Stack + Button (if NO thumbnail) */}
+                      <div className="mt-4 shrink-0 flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-4 border-t border-[#8C6D4F]/20">
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((t) => (
                             <span
@@ -458,19 +480,21 @@ export const ProjectsSection: React.FC = () => {
                           ))}
                         </div>
                         
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group shrink-0 inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
-                        >
-                          <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
-                            {project.thumbnailUrl ? 'Watch Project Video' : (project.linkText || 'View Deployment')}
-                          </span>
-                          <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
-                            ↗
-                          </span>
-                        </a>
+                        {!project.thumbnailUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group shrink-0 inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
+                          >
+                            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
+                              {project.linkText || 'View Deployment'}
+                            </span>
+                            <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
+                              ↗
+                            </span>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
