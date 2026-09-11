@@ -82,7 +82,7 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-black via-black/90 to-transparent pointer-events-none" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
-        <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
+        <div className="absolute bottom-[4vh] right-[4vh] lg:bottom-[8vh] lg:right-[8vh] pointer-events-none flex items-center justify-center z-10">
           <div className="relative flex items-center justify-center">
             <div className="absolute w-36 h-36 bg-black/85 rounded-full blur-xl" />
 
@@ -251,7 +251,7 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex flex-col items-start pointer-events-auto pr-24 xl:pr-36 mr-4 z-20 select-none"
+            className="hidden lg:flex flex-col items-start pointer-events-auto absolute right-[22vh] top-[48%] -translate-y-1/2 z-20 select-none"
           >
             {/* 1. Quote Mark */}
             <span className="text-xl text-[#C99E5D] leading-none font-serif mb-2">
