@@ -73,7 +73,7 @@ export const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="h-full w-auto max-w-none object-cover origin-right md:scale-[1.0] lg:scale-100"
+          className="h-full w-auto max-w-none object-cover origin-right"
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
@@ -82,7 +82,10 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-black via-black/90 to-transparent pointer-events-none" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
-        <div className="absolute bottom-[4vh] right-[4vh] lg:bottom-[8vh] lg:right-[8vh] pointer-events-none flex items-center justify-center z-10">
+        <div
+          className="absolute pointer-events-none flex items-center justify-center z-10"
+          style={{ bottom: '6%', right: '4%' }}
+        >
           <div className="relative flex items-center justify-center">
             <div className="absolute w-36 h-36 bg-black/85 rounded-full blur-xl" />
 
@@ -109,7 +112,15 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ================= 4. CONTENT LAYER ================= */}
-      <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
+      {/*
+        All spacing uses %, vw, or clamp() — never breakpoint-dependent rem jumps.
+        This keeps every element pinned to the same proportional position
+        regardless of browser zoom level.
+      */}
+      <div
+        className="relative z-10 flex flex-col justify-between h-full w-full pt-6 pb-8 pointer-events-none"
+        style={{ paddingLeft: 'clamp(1.5rem, 4vw, 4rem)', paddingRight: 'clamp(1.5rem, 4vw, 4rem)' }}
+      >
         
         {/* Navigation Bar */}
         <header className="relative flex items-center justify-between w-full pointer-events-auto">
@@ -117,14 +128,16 @@ export const HeroSection: React.FC = () => {
             href="#"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity font-sans"
+            className="font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity font-sans"
+            style={{ fontSize: 'clamp(0.7rem, 1vw, 0.875rem)' }}
           >
             OSAMA.
           </a>
 
           {/* Navigation Links */}
           <nav
-            className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2 font-sans"
+            className="hidden md:flex items-center text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2 font-sans"
+            style={{ gap: 'clamp(1.5rem, 2.5vw, 2.5rem)' }}
           >
             {navItems.map((item) => (
               <a
@@ -154,33 +167,44 @@ export const HeroSection: React.FC = () => {
           </a>
         </header>
 
-        {/* Main Hero Row */}
-        <div className="relative flex flex-col md:flex-row items-center justify-between w-full pt-4 pb-2 my-auto">
+        {/* Main Hero Row — uses percentage-based positioning, not flex distribute */}
+        <div className="relative w-full my-auto">
           
-          {/* LEFT: Balanced Headline & Actions */}
+          {/* LEFT: Headline & Actions — pinned to left side */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[42rem] xl:max-w-[45rem] pointer-events-auto z-20"
+            className="pointer-events-auto z-20 relative"
+            style={{ maxWidth: 'clamp(20rem, 42vw, 45rem)' }}
           >
-            {/* Massive Condensed Headline */}
+            {/* Massive Condensed Headline — smooth clamp scaling, no breakpoint jumps */}
             <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
               <h1
-                className="text-6xl sm:text-7xl md:text-[6.5rem] lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83] font-bebas"
+                className="tracking-tight uppercase leading-[0.83] font-bebas"
+                style={{ fontSize: 'clamp(3.5rem, 7vw, 7.8rem)' }}
               >
                 {/* Line 1 */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)] text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.2rem] xl:text-[6.8rem]">
+                <span
+                  className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]"
+                  style={{ fontSize: 'clamp(3rem, 6.2vw, 6.8rem)' }}
+                >
                   A CA FINALIST
                 </span>
 
                 {/* Line 2 */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)] text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.2rem] xl:text-[6.8rem] mt-2">
+                <span
+                  className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)] mt-2"
+                  style={{ fontSize: 'clamp(3rem, 6.2vw, 6.8rem)' }}
+                >
                   WHO BUILDS
                 </span>
 
                 {/* Line 3 */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)] text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.2rem] xl:text-[6.8rem] mt-2">
+                <span
+                  className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)] mt-2"
+                  style={{ fontSize: 'clamp(3rem, 6.2vw, 6.8rem)' }}
+                >
                   AGENTIC SYSTEMS
                 </span>
               </h1>
@@ -189,7 +213,8 @@ export const HeroSection: React.FC = () => {
             {/* Subtitle Technologies */}
             <motion.div variants={fadeUpVariants} className="mb-4 mt-8">
               <p
-                className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#C4B29E] font-sans"
+                className="font-normal tracking-[0.28em] uppercase text-[#C4B29E] font-sans"
+                style={{ fontSize: 'clamp(0.6rem, 0.9vw, 0.75rem)' }}
               >
                 <span className="text-[#F3DBB3] font-semibold tracking-[0.3em] drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]">CA FINALIST</span> <span className="text-[#8C6D4F] mx-1">•</span> AI AGENT ENGINEER <span className="text-[#8C6D4F] mx-1">•</span> AUTOMATION
               </p>
@@ -198,7 +223,8 @@ export const HeroSection: React.FC = () => {
             {/* 3-Line Description */}
             <motion.div
               variants={fadeUpVariants}
-              className="text-xs sm:text-sm md:text-[13.5px] font-light text-[#A8988B] leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1 font-sans"
+              className="font-light text-[#A8988B] leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1 font-sans"
+              style={{ fontSize: 'clamp(0.7rem, 1vw, 0.84rem)' }}
             >
               <p>
                 Bridging the deep precision of Accounting and Finance with the autonomous execution of Agentic AI and Automation.
@@ -210,7 +236,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA Buttons */}
             <motion.div
               variants={fadeUpVariants}
-              className="flex flex-row items-center gap-4 sm:gap-6 font-sans"
+              className="flex flex-row items-center gap-4 font-sans"
             >
               {/* Explore My Work CTA */}
               <motion.a
@@ -218,7 +244,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
+                className="relative inline-flex items-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
@@ -236,7 +262,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+                className="relative inline-flex items-center space-x-2 px-6 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
               >
                 <span>DOWNLOAD CV</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
@@ -246,16 +272,17 @@ export const HeroSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT: Floating Quote & Signature Card */}
+          {/* RIGHT: Floating Quote & Signature Card — percentage-based absolute position */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex flex-col items-start pointer-events-auto absolute right-[22vh] top-[48%] -translate-y-1/2 z-20 select-none"
+            className="hidden lg:flex flex-col items-start pointer-events-auto absolute z-20 select-none"
+            style={{ right: '12%', top: '50%', transform: 'translateY(-50%)' }}
           >
             {/* 1. Quote Mark */}
             <span className="text-xl text-[#C99E5D] leading-none font-serif mb-2">
-              “
+              "
             </span>
 
             {/* 2. Compact Two-Line Statement */}
@@ -271,7 +298,8 @@ export const HeroSection: React.FC = () => {
 
             {/* 4. Fine Monoline Calligraphy Signature */}
             <div 
-              className="text-[3.2rem] text-[#D8AB64] font-normal leading-none -ml-0.5 font-allura tracking-wide"
+              className="text-[#D8AB64] font-normal leading-none -ml-0.5 font-allura tracking-wide"
+              style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.2rem)' }}
             >
               Osama
             </div>
