@@ -474,7 +474,7 @@ export const ProjectsSection: React.FC = () => {
                             className="group shrink-0 inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
                           >
                             <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
-                              {project.linkText || 'View Deployment'}
+                              {project.linkText || 'Project Video Coming Soon'}
                             </span>
                             <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
                               ↗
