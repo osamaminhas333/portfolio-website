@@ -25,15 +25,22 @@ const projects: Project[] = [
     description: (
       <div className="space-y-2">
         <p>
-          An AI agent completes a full business cycle inside Odoo ERP automatically from a single prompt. Connected via Model Context Protocol (MCP), Claude executes real Odoo functions directly rather than just generating text.
+          One prompt, one run: an AI agent completes a full business cycle inside Odoo ERP on its own. CRM, sales, delivery, invoicing, payment, inventory, purchasing, manufacturing and HR, with zero clicks from me. Built for CA, ACCA, ERP consultants and finance professionals who want to see agentic AI working inside a real ERP, not just answering questions in a chatbot.
         </p>
-        <p className="font-semibold text-[#D4AF37]">Execution covers:</p>
+        <p className="font-semibold text-[#D4AF37]">What happens in this demo:</p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
-          <li><strong>Sales & CRM:</strong> Lead to won, order confirmation, & delivery</li>
-          <li><strong>Finance:</strong> Auto-invoicing & payment registration</li>
-          <li><strong>Supply Chain:</strong> Inventory sync, POs, & manufacturing</li>
-          <li><strong>HR:</strong> Employee creation & leave approval</li>
+          <li><strong>CRM:</strong> creates the customer and marks the opportunity as won</li>
+          <li><strong>Sales:</strong> generates and confirms the sales order</li>
+          <li><strong>Delivery:</strong> processes the delivery to the customer</li>
+          <li><strong>Accounting:</strong> creates the invoice and registers the payment</li>
+          <li><strong>Inventory:</strong> updates stock levels</li>
+          <li><strong>Purchasing:</strong> places the purchase order</li>
+          <li><strong>Manufacturing:</strong> runs the manufacturing order</li>
+          <li><strong>HR:</strong> creates a new employee and approves a leave request</li>
         </ul>
+        <p className="text-[11px] leading-relaxed">
+          <strong className="text-[#D4AF37]">How it works:</strong> I wrote one comprehensive prompt covering the whole cycle and ran it in Claude, connected to Odoo through MCP (Model Context Protocol). MCP lets Claude use Odoo's real functions directly, so it executes each step itself instead of telling you what to click. At the end, every record is checked inside Odoo. (The execution part is sped up in the video.)
+        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=xpXql7syJpc',
@@ -57,14 +64,17 @@ const projects: Project[] = [
     description: (
       <div className="space-y-2">
         <p>
-          A 24/7 autonomous bookkeeping agent seamlessly integrated with QuickBooks Online. By automating core essentials, it ensures continuous, error-free accounting records ready for tax compliance:
+          An advanced AI-powered bookkeeping pipeline seamlessly integrated with QuickBooks Online. This autonomous agent functions as a 24/7 virtual bookkeeper, managing core accounting operations with absolute precision:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Reconciliations:</strong> Auto-matching of bank feeds and transaction coding.</li>
-          <li><strong>Data Processing:</strong> OCR extraction and exact expense categorization.</li>
-          <li><strong>AP/AR Management:</strong> Tracks vendor bills, sends payment reminders, and manages receivables.</li>
-          <li><strong>Reporting:</strong> Real-time generation of P&L statements, balance sheets, and audit trails.</li>
+          <li><strong>Bank Reconciliations:</strong> Autonomous matching of bank feeds and transaction coding.</li>
+          <li><strong>Invoice & Receipt Processing:</strong> Automated OCR extraction and precise expense categorization.</li>
+          <li><strong>AP & AR Management:</strong> Tracking vendor bills, sending payment reminders, and managing receivables.</li>
+          <li><strong>Financial Reporting:</strong> Real-time generation of P&L statements, balance sheets, and audit trails.</li>
         </ul>
+        <p>
+          By automating these QuickBooks essentials, the agent ensures continuous, error-free accounting records ready for tax compliance.
+        </p>
       </div>
     ),
     githubUrl: '#',
@@ -87,14 +97,17 @@ const projects: Project[] = [
     description: (
       <div className="space-y-2">
         <p>
-          Eliminates manual spreadsheet workflows by connecting MS Excel to AI agents via MCP. The agent gains deep contextual awareness of local files for instant, enterprise-grade execution:
+          Transforming manual spreadsheet workflows into an autonomous pipeline by connecting Microsoft Excel directly to AI agents via the Model Context Protocol (MCP). This integration completely eliminates repetitive data entry and complex manual formatting:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Cleansing & Sync:</strong> Autonomous data parsing and external database syncing.</li>
-          <li><strong>Calculations:</strong> AI-driven dynamic financial modeling and pivot logic.</li>
-          <li><strong>Bulk Reporting:</strong> Automated generation and styling of executive dashboards.</li>
-          <li><strong>Cross-System:</strong> Seamlessly reading and writing data between Excel and databases via MCP.</li>
+          <li><strong>Data Formatting & Cleansing:</strong> Autonomous parsing, structuring, and cleaning of raw financial datasets.</li>
+          <li><strong>Complex Calculations:</strong> AI-driven execution of dynamic financial modeling and pivot logic.</li>
+          <li><strong>Bulk Reporting:</strong> Automated generation and styling of executive dashboards and summaries.</li>
+          <li><strong>Cross-System Sync:</strong> Seamlessly reading and writing data between Excel and external databases via MCP.</li>
         </ul>
+        <p>
+          By leveraging MCP, the AI agent possesses deep contextual awareness of local Excel files, enabling error-free, instant execution of enterprise-grade spreadsheet tasks.
+        </p>
       </div>
     ),
     githubUrl: '#',
@@ -153,13 +166,13 @@ const projects: Project[] = [
           Stop scheduling Facebook posts page by page.
         </p>
         <p>
-          This n8n automation completely handles bulk content scheduling across multiple Facebook Pages. It loads content, loops through target pages, schedules posts, and updates deployment status autonomously.
+          This short workflow animation demonstrates an n8n automation for scheduling content across multiple Facebook Pages—from loading content and looping through pages to scheduling posts and updating their status.
         </p>
         <p>
-          Built specifically to scale operations for social media managers and agencies managing multiple accounts.
+          Built around bulk content scheduling for social media managers, agencies, and businesses managing multiple pages.
         </p>
-        <p className="text-[11px] leading-relaxed text-[#D4AF37] opacity-90">
-          Need a similar setup? Comment “AUTOMATE” on the video and subscribe for more n8n workflows! #n8n #SocialMediaAutomation
+        <p className="text-[11px] leading-relaxed text-[#D4AF37]">
+          Need a similar Facebook automation? Comment “AUTOMATE” and tell us how many pages you manage. Subscribe for more n8n workflows and social media automation demos. #n8n #FacebookAutomation #SocialMediaAutomation
         </p>
       </div>
     ),
@@ -185,18 +198,21 @@ const projects: Project[] = [
     description: (
       <div className="space-y-2">
         <p>
-          Zero-cost AI video generation on autopilot: just add a title and reference image to Google Sheets. This n8n workflow loops indefinitely with no paid API.
+          Free AI video generation on autopilot: add a title and a reference image to Google Sheets, and this n8n workflow keeps generating videos in a loop with no paid video API.
         </p>
         <p>
-          It runs the Wan 2.2 model via ComfyUI on Modal's serverless GPUs.
+          The model (Wan 2.2 image-to-video on ComfyUI) runs on serverless GPUs through my Modal account, inside Modal's free credits.
         </p>
-        <p className="font-semibold text-[#D4AF37]">How it works:</p>
-        <ul className="grid grid-cols-1 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
-          <li><strong>Trigger:</strong> n8n automatically picks the next row from Google Sheets</li>
-          <li><strong>Processing:</strong> Image/prompt sent to Modal GPU endpoint for video generation</li>
+        <p className="font-semibold text-[#D4AF37]">How the automation works:</p>
+        <ul className="grid grid-cols-1 sm:grid-cols-1 gap-x-4 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
+          <li><strong>Input:</strong> Google Sheet row = title/prompt + reference image</li>
+          <li><strong>Trigger:</strong> n8n picks the next row automatically</li>
+          <li><strong>Processing:</strong> Image + prompt go to the GPU endpoint on Modal</li>
+          <li><strong>Output:</strong> AI video is generated and returned</li>
+          <li><strong>Iteration:</strong> Loop moves to the next row until the sheet is done</li>
         </ul>
         <p className="text-[11px] leading-relaxed">
-          <strong className="text-[#D4AF37]">Why it matters:</strong> Scales instantly without manual prompting or per-video API costs.
+          <strong className="text-[#D4AF37]">Why it matters:</strong> no per-video API cost, no manual prompting, and scaling up is as simple as adding rows.
         </p>
       </div>
     ),
@@ -226,16 +242,17 @@ const projects: Project[] = [
           <strong className="text-[#D4AF37]">What if your browser could do the work for you?</strong>
         </p>
         <p>
-          This demo showcases an AI agent researching across multiple websites, compiling a recommendation list, and delivering it via WhatsApp Web.
+          In this demo, I give an AI agent a task—and it browses multiple websites, researches movie recommendations, compiles a list, and sends it through WhatsApp Web.
         </p>
-        <p className="font-semibold text-[#D4AF37]">Highlights:</p>
+        <p className="font-semibold text-[#D4AF37]">You’ll see:</p>
         <ul className="grid grid-cols-1 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
-          <li>Setting up Browser Use with Codex</li>
-          <li>Connecting Chrome through CDP for direct execution</li>
-          <li>End-to-end automation from web research to WhatsApp delivery</li>
+          <li>How to set up Browser Use with Codex</li>
+          <li>How to connect Chrome through CDP</li>
+          <li>AI researching across websites</li>
+          <li>Research results delivered through WhatsApp</li>
         </ul>
-        <p className="text-[11px] leading-relaxed opacity-90 mt-1">
-          Watch the workflow in action—and imagine which repetitive browser task you could automate next.
+        <p className="text-[11px] leading-relaxed">
+          From searching to sending, watch the workflow in action—and imagine which repetitive browser task you could automate next.
         </p>
       </div>
     ),
@@ -408,18 +425,16 @@ export const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* ================= BACK FACE ================= */}
-                  <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)_translateZ(1px)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)] antialiased">
+                  <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-6 sm:px-10 sm:py-8 [backface-visibility:hidden] [transform:rotateX(180deg)_translateZ(1px)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)] antialiased">
                     <div className="flex flex-col h-full overflow-hidden">
                       <div className="flex-1 overflow-hidden flex flex-col md:flex-row gap-6">
                         
-                        {/* LEFT COLUMN: Title + Scrolling Description */}
+                        {/* LEFT COLUMN: Title + Description */}
                         <div className="flex-1 flex flex-col overflow-hidden">
                           <h4 className="shrink-0 text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">
                             {project.title}
                           </h4>
-                          <div 
-                            className="flex-1 overflow-hidden pr-2 relative z-10 pointer-events-auto" 
-                          >
+                          <div className="flex-1 overflow-hidden pr-2 relative z-10 pointer-events-auto">
                             <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
                               {project.description}
                             </div>
