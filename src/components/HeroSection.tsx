@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className="font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity font-sans"
-            style={{ fontSize: 'max(14px, 0.9vw)' }}
+            style={{ fontSize: 'max(20px, 1.2vw)' }}
           >
             OSAMA.
           </a>
@@ -142,7 +142,7 @@ export const HeroSection: React.FC = () => {
           {/* Navigation Links */}
           <nav
             className="hidden md:flex items-center font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2 font-sans"
-            style={{ gap: 'max(16px, 2.6vw)', fontSize: 'max(11px, 0.72vw)', letterSpacing: '0.28em' }}
+            style={{ gap: 'max(20px, 3.2vw)', fontSize: 'max(14px, 0.9vw)', letterSpacing: '0.28em' }}
           >
             {navItems.map((item) => (
               <a
@@ -164,10 +164,10 @@ export const HeroSection: React.FC = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className="group flex items-center border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0 font-sans font-light uppercase"
-            style={{ fontSize: 'max(11px, 0.72vw)', letterSpacing: '0.24em', padding: 'max(6px, 0.55vw) max(12px, 1.2vw)', gap: 'max(4px, 0.4vw)' }}
+            style={{ fontSize: 'max(14px, 0.9vw)', letterSpacing: '0.24em', padding: 'max(8px, 0.7vw) max(16px, 1.6vw)', gap: 'max(6px, 0.5vw)' }}
           >
             <span>LET&apos;S TALK</span>
-            <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: 'max(10px, 0.6vw)' }}>
+            <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: 'max(12px, 0.8vw)' }}>
               ↗
             </span>
           </a>
