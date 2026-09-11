@@ -19,7 +19,7 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    title: 'AI Agent Runs ODOO | Accounting on Autopilot | CA, ACCA & Finance Teams',
+    title: 'AI Agent Runs ODOO | Accounting on Autopilot',
     category: 'ERP / AGENT ORCHESTRATION',
     description: (
       <div className="space-y-3">
@@ -43,7 +43,7 @@ const projects: Project[] = [
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=xpXql7syJpc',
-    linkText: 'Watch Video',
+    linkText: 'Watch Project Video',
     thumbnailUrl: '/media/odoo-thumbnail.png',
     tech: [
       'Claude',
@@ -187,7 +187,7 @@ const projects: Project[] = [
   },
   {
     number: '06',
-    title: 'FREE AI Video Generator Automation | n8n + Modal + Wan 2.2, No Paid API',
+    title: 'Free AI Video Generator',
     category: 'OPEN-WEIGHT AI / SERVERLESS GPU',
     description: (
       <div className="space-y-3">
@@ -413,19 +413,26 @@ export const ProjectsSection: React.FC = () => {
                   <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)]">
                     <div className="flex flex-col h-full overflow-hidden">
                       <div className="flex-1 overflow-y-auto pr-2" style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F #16120E' }}>
-                        <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
-                        {project.thumbnailUrl && (
-                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block shrink-0 mb-4 overflow-hidden rounded-md border border-[#8C6D4F]/40 hover:border-[#D4AF37] transition-colors relative group">
-                             <img src={project.thumbnailUrl} alt="Video Thumbnail" className="w-full h-32 sm:h-40 object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
-                             <div className="absolute inset-0 flex items-center justify-center">
-                               <div className="w-12 h-12 bg-black/60 rounded-full flex items-center justify-center group-hover:bg-[#D4AF37]/90 transition-colors">
-                                 <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                               </div>
-                             </div>
-                          </a>
-                        )}
-                        <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
-                          {project.description}
+                        <div className="flex flex-col md:flex-row gap-6">
+                          <div className="flex-1">
+                            <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
+                            <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
+                              {project.description}
+                            </div>
+                          </div>
+                          
+                          {project.thumbnailUrl && (
+                            <div className="w-full md:w-64 shrink-0 flex flex-col items-center gap-4">
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-md border border-[#8C6D4F]/40 hover:border-[#D4AF37] transition-colors relative group">
+                                 <img src={project.thumbnailUrl} alt="Video Thumbnail" className="w-full h-auto aspect-video object-contain bg-black opacity-80 group-hover:opacity-100 transition-opacity" />
+                                 <div className="absolute inset-0 flex items-center justify-center">
+                                   <div className="w-10 h-10 bg-black/60 rounded-full flex items-center justify-center group-hover:bg-[#D4AF37]/90 transition-colors">
+                                     <svg className="w-4 h-4 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                                   </div>
+                                 </div>
+                              </a>
+                            </div>
+                          )}
                         </div>
                       </div>
                       
@@ -448,7 +455,7 @@ export const ProjectsSection: React.FC = () => {
                           className="group shrink-0 inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
                         >
                           <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
-                            {project.linkText || 'View Deployment'}
+                            {project.thumbnailUrl ? 'Watch Project Video' : (project.linkText || 'View Deployment')}
                           </span>
                           <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
                             ↗
