@@ -55,3 +55,7 @@ Running log: date · decision · reason
 
 - **Decision:** Documented 5 critical engineering mistakes and their corrections in `CURRENT_STATE.md`.
 - **Reason:** To prevent future AI agents (and developers) from repeating the same CSS flexbox, sticky positioning, viewport scaling, and 3D Z-clipping traps.
+
+## 2026-09-12
+- **Decision:** Added Anthropic MCP Advanced Topics certificate.
+- **Reason:** Provided by user in chat as an image upload.

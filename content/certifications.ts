@@ -56,6 +56,16 @@ export const certifications: Certification[] = [
 
   // --- AI ---
   {
+    id: "anthropic-mcp-advanced",
+    title: "Model Context Protocol: Advanced Topics",
+    issuer: "Anthropic",
+    date: null,
+    credentialId: null,
+    category: "AI",
+    subCategory: "Agentic & LLM Engineering",
+    documents: ["/documents/certificates/ai/anthropic-mcp-advanced.png"]
+  },
+  {
     id: "anthropic-claude-code-101",
     title: "Claude Code 101",
     issuer: "Anthropic",
