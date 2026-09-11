@@ -182,18 +182,18 @@ export const HeroSection: React.FC = () => {
             initial="hidden"
             animate="visible"
             className="pointer-events-auto z-20 relative"
-            style={{ maxWidth: 'max(360px, 42vw)' }}
+            style={{ maxWidth: 'max(420px, 52vw)' }}
           >
             {/* Massive Condensed Headline — pure vw, no bounds */}
             <motion.div variants={fadeUpVariants} className="relative select-none" style={{ marginBottom: 'max(12px, 1vw)' }}>
               <h1
                 className="tracking-tight uppercase leading-[0.83] font-bebas"
-                style={{ fontSize: 'max(42px, 7vw)' }}
+                style={{ fontSize: 'max(54px, 8.5vw)' }}
               >
                 {/* Line 1 */}
                 <span
                   className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]"
-                  style={{ fontSize: 'max(36px, 6.2vw)' }}
+                  style={{ fontSize: 'max(48px, 7.8vw)' }}
                 >
                   A CA FINALIST
                 </span>
@@ -201,7 +201,7 @@ export const HeroSection: React.FC = () => {
                 {/* Line 2 */}
                 <span
                   className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]"
-                  style={{ fontSize: 'max(36px, 6.2vw)', marginTop: 'max(4px, 0.3vw)' }}
+                  style={{ fontSize: 'max(48px, 7.8vw)', marginTop: 'max(4px, 0.4vw)' }}
                 >
                   WHO BUILDS
                 </span>
@@ -209,7 +209,7 @@ export const HeroSection: React.FC = () => {
                 {/* Line 3 */}
                 <span
                   className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]"
-                  style={{ fontSize: 'max(36px, 6.2vw)', marginTop: 'max(4px, 0.3vw)' }}
+                  style={{ fontSize: 'max(48px, 7.8vw)', marginTop: 'max(4px, 0.4vw)' }}
                 >
                   AGENTIC SYSTEMS
                 </span>
@@ -217,10 +217,10 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             {/* Subtitle Technologies */}
-            <motion.div variants={fadeUpVariants} style={{ marginBottom: 'max(12px, 1vw)', marginTop: 'max(24px, 2vw)' }}>
+            <motion.div variants={fadeUpVariants} style={{ marginBottom: 'max(12px, 1vw)', marginTop: 'max(32px, 2.5vw)' }}>
               <p
                 className="font-normal uppercase text-[#C4B29E] font-sans flex flex-wrap items-center leading-snug"
-                style={{ fontSize: 'max(12px, 0.95vw)', letterSpacing: '0.28em' }}
+                style={{ fontSize: 'max(14px, 1.25vw)', letterSpacing: '0.28em' }}
               >
                 <span className="text-[#F3DBB3] font-semibold drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]" style={{ letterSpacing: '0.3em' }}>CA FINALIST</span> <span className="text-[#8C6D4F]" style={{ margin: '0 max(6px, 0.5vw)' }}>•</span> AI AGENT ENGINEER <span className="text-[#8C6D4F]" style={{ margin: '0 max(6px, 0.5vw)' }}>•</span> AUTOMATION
               </p>
@@ -230,7 +230,7 @@ export const HeroSection: React.FC = () => {
             <motion.div
               variants={fadeUpVariants}
               className="font-light text-[#A8988B] tracking-wide font-sans"
-              style={{ fontSize: 'max(14px, 1vw)', lineHeight: '1.8', maxWidth: 'max(340px, 34vw)', marginBottom: 'max(24px, 1.5vw)' }}
+              style={{ fontSize: 'max(16px, 1.35vw)', lineHeight: '1.8', maxWidth: 'max(400px, 42vw)', marginBottom: 'max(32px, 2vw)' }}
             >
               <p>
                 Bridging the deep precision of Accounting and Finance with the autonomous execution of Agentic AI and Automation.
@@ -243,7 +243,7 @@ export const HeroSection: React.FC = () => {
             <motion.div
               variants={fadeUpVariants}
               className="flex flex-row flex-wrap items-center font-sans"
-              style={{ gap: 'max(12px, 1vw)' }}
+              style={{ gap: 'max(16px, 1.4vw)' }}
             >
               {/* Explore My Work CTA */}
               <motion.a
@@ -252,11 +252,11 @@ export const HeroSection: React.FC = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] font-medium uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
-                style={{ fontSize: 'max(12px, 0.85vw)', letterSpacing: '0.24em', padding: 'max(10px, 0.9vw) max(20px, 1.8vw)', gap: 'max(6px, 0.5vw)' }}
+                style={{ fontSize: 'max(14px, 1.1vw)', letterSpacing: '0.24em', padding: 'max(14px, 1.2vw) max(24px, 2.2vw)', gap: 'max(8px, 0.7vw)' }}
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: 'max(10px, 0.6vw)' }}>
+                <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ fontSize: 'max(12px, 0.9vw)' }}>
                   ↗
                 </span>
               </motion.a>
@@ -271,10 +271,10 @@ export const HeroSection: React.FC = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] font-medium uppercase transition-all duration-300"
-                style={{ fontSize: 'max(12px, 0.85vw)', letterSpacing: '0.24em', padding: 'max(10px, 0.9vw) max(20px, 1.8vw)', gap: 'max(6px, 0.4vw)' }}
+                style={{ fontSize: 'max(14px, 1.1vw)', letterSpacing: '0.24em', padding: 'max(14px, 1.2vw) max(24px, 2.2vw)', gap: 'max(8px, 0.6vw)' }}
               >
                 <span>DOWNLOAD CV</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5" style={{ fontSize: 'max(10px, 0.6vw)' }}>
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5" style={{ fontSize: 'max(12px, 0.9vw)' }}>
                   ↓
                 </span>
               </motion.a>
