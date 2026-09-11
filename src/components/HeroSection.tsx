@@ -287,7 +287,7 @@ export const HeroSection: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="hidden lg:flex flex-col items-start pointer-events-auto absolute z-20 select-none"
-            style={{ right: '12%', top: '50%', transform: 'translateY(-50%)' }}
+            style={{ right: '4%', top: '50%', transform: 'translateY(-50%)' }}
           >
             {/* 1. Quote Mark */}
             <span className="text-[#C99E5D] leading-none font-serif" style={{ fontSize: 'max(24px, 1.4vw)', marginBottom: 'max(8px, 0.5vw)' }}>
