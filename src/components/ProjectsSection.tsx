@@ -38,9 +38,6 @@ const projects: Project[] = [
           <li><strong>Manufacturing:</strong> runs the manufacturing order</li>
           <li><strong>HR:</strong> creates a new employee and approves a leave request</li>
         </ul>
-        <p className="text-[11px] leading-relaxed">
-          <strong className="text-[#D4AF37]">How it works:</strong> I wrote one comprehensive prompt covering the whole cycle and ran it in Claude, connected to Odoo through MCP (Model Context Protocol). MCP lets Claude use Odoo's real functions directly, so it executes each step itself instead of telling you what to click. At the end, every record is checked inside Odoo. (The execution part is sped up in the video.)
-        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=xpXql7syJpc',
@@ -72,9 +69,6 @@ const projects: Project[] = [
           <li><strong>AP & AR Management:</strong> Tracking vendor bills, sending payment reminders, and managing receivables.</li>
           <li><strong>Financial Reporting:</strong> Real-time generation of P&L statements, balance sheets, and audit trails.</li>
         </ul>
-        <p>
-          By automating these QuickBooks essentials, the agent ensures continuous, error-free accounting records ready for tax compliance.
-        </p>
       </div>
     ),
     githubUrl: '#',
@@ -105,9 +99,6 @@ const projects: Project[] = [
           <li><strong>Bulk Reporting:</strong> Automated generation and styling of executive dashboards and summaries.</li>
           <li><strong>Cross-System Sync:</strong> Seamlessly reading and writing data between Excel and external databases via MCP.</li>
         </ul>
-        <p>
-          By leveraging MCP, the AI agent possesses deep contextual awareness of local Excel files, enabling error-free, instant execution of enterprise-grade spreadsheet tasks.
-        </p>
       </div>
     ),
     githubUrl: '#',
@@ -171,13 +162,6 @@ const projects: Project[] = [
         <p>
           Built around bulk content scheduling for social media managers, agencies, and businesses managing multiple pages.
         </p>
-        <p className="text-[11px] leading-relaxed text-[#D4AF37]">
-          Need a similar Facebook automation? Comment “AUTOMATE” and tell us how many pages you manage.
-          <br />
-          Subscribe for more n8n workflows and social media automation demos.
-          <br />
-          #n8n #FacebookAutomation #SocialMediaAutomation
-        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=W3dnLVDcGIA',
@@ -215,9 +199,6 @@ const projects: Project[] = [
           <li><strong>Output:</strong> AI video is generated and returned</li>
           <li><strong>Iteration:</strong> Loop moves to the next row until the sheet is done</li>
         </ul>
-        <p className="text-[11px] leading-relaxed">
-          <strong className="text-[#D4AF37]">Why it matters:</strong> no per-video API cost, no manual prompting, and scaling up is as simple as adding rows.
-        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=1zdaOVHCgCY',
@@ -255,9 +236,6 @@ const projects: Project[] = [
           <li>AI researching across websites</li>
           <li>Research results delivered through WhatsApp</li>
         </ul>
-        <p className="text-[11px] leading-relaxed">
-          From searching to sending, watch the workflow in action—and imagine which repetitive browser task you could automate next.
-        </p>
       </div>
     ),
     githubUrl: 'https://www.youtube.com/watch?v=KmDZGWrOez0&list=PLVwgOBp4SYOs',
@@ -439,11 +417,7 @@ export const ProjectsSection: React.FC = () => {
                             {project.title}
                           </h4>
                           <div 
-                            className="flex-1 overflow-y-auto pr-2 overscroll-contain relative z-10 pointer-events-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-[#8C6D4F] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-[#16120E]/20" 
-                            style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F transparent', transform: 'translateZ(0)' }}
-                            data-lenis-prevent="true"
-                            onWheel={(e) => e.stopPropagation()}
-                            onTouchMove={(e) => e.stopPropagation()}
+                            className="flex-1 overflow-hidden pr-2 relative z-10 pointer-events-auto" 
                           >
                             <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
                               {project.description}
