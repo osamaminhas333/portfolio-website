@@ -10,6 +10,8 @@ interface Project {
   category: string;
   description: React.ReactNode;
   githubUrl: string;
+  linkText?: string;
+  thumbnailUrl?: string;
   tech: string[];
   metrics: { label: string; value: string }[];
 }
@@ -17,31 +19,36 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    title: 'Odoo (ERP) Agentic Automation',
+    title: 'AI Agent Runs ODOO | Accounting on Autopilot | CA, ACCA & Finance Teams',
     category: 'ERP / AGENT ORCHESTRATION',
     description: (
       <div className="space-y-3">
         <p>
-          End-to-end integration of Odoo ERP with autonomous agent harnesses, transforming a traditional ERP into an intelligent, self-driving business engine. The AI agents have full control to execute and monitor workflows across all major Odoo modules without manual intervention:
+          One prompt, one run: an AI agent completes a full business cycle inside Odoo ERP on its own. CRM, sales, delivery, invoicing, payment, inventory, purchasing, manufacturing and HR, with zero clicks from me. Built for CA, ACCA, ERP consultants and finance professionals who want to see agentic AI working inside a real ERP, not just answering questions in a chatbot.
         </p>
-        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 pl-4 list-disc marker:text-[#D4AF37]">
-          <li><strong>Sales & CRM:</strong> Automated lead scoring, quotation generation, and follow-ups.</li>
-          <li><strong>Accounting:</strong> Journal entries, ledger reconciliations, and tax compliance.</li>
-          <li><strong>Accounts Payable & Receivable:</strong> Automated invoice matching, payment tracking, and aging analysis.</li>
-          <li><strong>Inventory & Procurement:</strong> Autonomous stock monitoring and automated purchase orders.</li>
+        <p className="font-semibold text-[#D4AF37]">What happens in this demo:</p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
+          <li><strong>CRM:</strong> creates the customer and marks the opportunity as won</li>
+          <li><strong>Sales:</strong> generates and confirms the sales order</li>
+          <li><strong>Delivery:</strong> processes the delivery to the customer</li>
+          <li><strong>Accounting:</strong> creates the invoice and registers the payment</li>
+          <li><strong>Inventory:</strong> updates stock levels</li>
+          <li><strong>Purchasing:</strong> places the purchase order</li>
+          <li><strong>Manufacturing:</strong> runs the manufacturing order</li>
+          <li><strong>HR:</strong> creates a new employee and approves a leave request</li>
         </ul>
-        <p>
-          This architecture ensures absolute operational efficiency with built-in audit trails and control testing.
+        <p className="text-[11px] leading-relaxed">
+          <strong className="text-[#D4AF37]">How it works:</strong> I wrote one comprehensive prompt covering the whole cycle and ran it in Claude, connected to Odoo through MCP (Model Context Protocol). MCP lets Claude use Odoo's real functions directly, so it executes each step itself instead of telling you what to click. At the end, every record is checked inside Odoo. (The execution part is sped up in the video.)
         </p>
       </div>
     ),
-    githubUrl: '#',
+    githubUrl: 'https://www.youtube.com/watch?v=xpXql7syJpc',
+    linkText: 'Watch Video',
+    thumbnailUrl: '/media/odoo-thumbnail.png',
     tech: [
+      'Claude',
+      'Model Context Protocol (MCP)',
       'Odoo ERP',
-      'Agent Harness',
-      'Python',
-      'Automation',
-      'Financial Accounting',
     ],
     metrics: [
       { label: 'OPERATION', value: 'Automated Entry' },
@@ -180,18 +187,38 @@ const projects: Project[] = [
   },
   {
     number: '06',
-    title: 'Zero-Cost Video Gen Stack',
+    title: 'FREE AI Video Generator Automation | n8n + Modal + Wan 2.2, No Paid API',
     category: 'OPEN-WEIGHT AI / SERVERLESS GPU',
-    description:
-      'Open-weight Wan 2.2 video model deployed on ComfyUI over serverless GPU (Modal, A100) with authenticated endpoints and budget controls, wired into n8n — replacing paid video APIs at near-zero marginal cost.',
-    githubUrl: '#',
+    description: (
+      <div className="space-y-3">
+        <p>
+          Free AI video generation on autopilot: add a title and a reference image to Google Sheets, and this n8n workflow keeps generating videos in a loop with no paid video API.
+        </p>
+        <p>
+          The model (Wan 2.2 image-to-video on ComfyUI) runs on serverless GPUs through my Modal account, inside Modal's free credits.
+        </p>
+        <p className="font-semibold text-[#D4AF37]">How the automation works:</p>
+        <ul className="grid grid-cols-1 sm:grid-cols-1 gap-x-4 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
+          <li><strong>Input:</strong> Google Sheet row = title/prompt + reference image</li>
+          <li><strong>Trigger:</strong> n8n picks the next row automatically</li>
+          <li><strong>Processing:</strong> Image + prompt go to the GPU endpoint on Modal</li>
+          <li><strong>Output:</strong> AI video is generated and returned</li>
+          <li><strong>Iteration:</strong> Loop moves to the next row until the sheet is done</li>
+        </ul>
+        <p className="text-[11px] leading-relaxed">
+          <strong className="text-[#D4AF37]">Why it matters:</strong> no per-video API cost, no manual prompting, and scaling up is as simple as adding rows.
+        </p>
+      </div>
+    ),
+    githubUrl: 'https://www.youtube.com/watch?v=1zdaOVHCgCY',
+    linkText: 'Watch Video',
+    thumbnailUrl: '/media/video-gen-thumbnail.jpg',
     tech: [
-      'Wan 2.2',
-      'ComfyUI',
-      'Modal (A100)',
       'n8n',
-      'Serverless GPU',
-      'API Authentication',
+      'Google Sheets',
+      'ComfyUI',
+      'Wan 2.2',
+      'Modal',
     ],
     metrics: [
       { label: 'MODEL', value: 'Wan 2.2 (Open-Weight)' },
@@ -201,23 +228,42 @@ const projects: Project[] = [
   },
   {
     number: '07',
-    title: 'Self-Hosted Agent Environment',
-    category: 'LOCAL DEPLOYMENT / CONTAINERIZATION',
-    description:
-      'Deployed a comprehensive self-hosted environment integrating OpenHands, n8n, OpenClaw, Agent Harnesses, OMP, ComfyUI, MCP, Odoo, and PostgreSQL under Docker. Configured with persistent volumes, isolated networking, and interchangeable LLM backends for secure, robust local execution.',
-    githubUrl: '#',
+    title: 'Stop Clicking. Let AI Control Your Browser!',
+    category: 'BROWSER AUTOMATION / AI AGENTS',
+    description: (
+      <div className="space-y-3">
+        <p>
+          <strong className="text-[#D4AF37]">What if your browser could do the work for you?</strong>
+        </p>
+        <p>
+          In this demo, I give an AI agent a task—and it browses multiple websites, researches movie recommendations, compiles a list, and sends it through WhatsApp Web.
+        </p>
+        <p className="font-semibold text-[#D4AF37]">You’ll see:</p>
+        <ul className="grid grid-cols-1 gap-y-1 pl-4 list-disc marker:text-[#D4AF37] text-[11px] leading-tight">
+          <li>How to set up Browser Use with Codex</li>
+          <li>How to connect Chrome through CDP</li>
+          <li>AI researching across websites</li>
+          <li>Research results delivered through WhatsApp</li>
+        </ul>
+        <p className="text-[11px] leading-relaxed">
+          From searching to sending, watch the workflow in action—and imagine which repetitive browser task you could automate next.
+        </p>
+      </div>
+    ),
+    githubUrl: 'https://www.youtube.com/watch?v=KmDZGWrOez0&list=PLVwgOBp4SYOs',
+    linkText: 'Watch Video',
+    thumbnailUrl: '/media/browser-automation-thumbnail.jpg',
     tech: [
-      'Docker',
-      'Docker Compose',
-      'OpenHands',
-      'WSL2',
-      'Volume Persistence',
-      'LLM Configuration',
+      'Browser Use',
+      'Codex',
+      'Chrome CDP',
+      'WhatsApp Web',
+      'AI Agents',
     ],
     metrics: [
-      { label: 'DEPLOYMENT', value: 'Containerized (Docker)' },
-      { label: 'SECURITY', value: 'Isolated Networking' },
-      { label: 'FLEXIBILITY', value: 'Configurable Backends' },
+      { label: 'OPERATION', value: 'Web Automation' },
+      { label: 'ENGINE', value: 'Codex & Browser Use' },
+      { label: 'INTEGRATION', value: 'WhatsApp Web' },
     ],
   },
 ];
@@ -365,15 +411,25 @@ export const ProjectsSection: React.FC = () => {
 
                   {/* ================= BACK FACE ================= */}
                   <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#D4AF37]/80 bg-[#16120E] p-8 sm:p-12 [backface-visibility:hidden] [transform:rotateX(180deg)] overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(212,175,55,0.15)]">
-                    <div className="flex flex-col justify-between h-full">
-                      <div>
+                    <div className="flex flex-col h-full overflow-hidden">
+                      <div className="flex-1 overflow-y-auto pr-2" style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F #16120E' }}>
                         <h4 className="text-2xl text-[#F7E7C4] font-bebas tracking-wide mb-4 uppercase">{project.title}</h4>
-                        <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans">
+                        {project.thumbnailUrl && (
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block shrink-0 mb-4 overflow-hidden rounded-md border border-[#8C6D4F]/40 hover:border-[#D4AF37] transition-colors relative group">
+                             <img src={project.thumbnailUrl} alt="Video Thumbnail" className="w-full h-32 sm:h-40 object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                             <div className="absolute inset-0 flex items-center justify-center">
+                               <div className="w-12 h-12 bg-black/60 rounded-full flex items-center justify-center group-hover:bg-[#D4AF37]/90 transition-colors">
+                                 <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                               </div>
+                             </div>
+                          </a>
+                        )}
+                        <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
                           {project.description}
                         </div>
                       </div>
                       
-                      <div className="mt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                      <div className="mt-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-4 border-t border-[#8C6D4F]/20">
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((t) => (
                             <span
@@ -389,10 +445,10 @@ export const ProjectsSection: React.FC = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
+                          className="group shrink-0 inline-flex items-center justify-center space-x-2 px-6 py-3 border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors duration-300 rounded-sm"
                         >
                           <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#D4AF37] group-hover:text-[#F7E7C4]">
-                            View Deployment
+                            {project.linkText || 'View Deployment'}
                           </span>
                           <span className="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#D4AF37]">
                             ↗
