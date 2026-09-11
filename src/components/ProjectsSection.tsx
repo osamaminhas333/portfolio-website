@@ -441,6 +441,7 @@ export const ProjectsSection: React.FC = () => {
                           <div 
                             className="flex-1 overflow-y-auto pr-2 overscroll-contain" 
                             style={{ scrollbarWidth: 'thin', scrollbarColor: '#8C6D4F #16120E' }}
+                            data-lenis-prevent="true"
                           >
                             <div className="text-xs sm:text-[13.5px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide font-sans pb-4">
                               {project.description}

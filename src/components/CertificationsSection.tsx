@@ -93,6 +93,15 @@ const certifications: Certification[] = [
     imagePath: '/documents/certificates/ai/introduction-to-mcp.png',
     customLabel: 'MCP INTRODUCTION'
   },
+  {
+    id: 'ai-9',
+    title: 'Model Context Protocol: Advanced Topics',
+    issuer: 'Anthropic',
+    details: 'Advanced architecture and integrations',
+    category: 'AI / AGENTIC WORKFLOWS',
+    imagePath: '/documents/certificates/ai/anthropic-mcp-advanced.png',
+    customLabel: 'MCP ADVANCED'
+  },
 
   // CA Certificates
   {
