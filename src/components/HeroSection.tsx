@@ -220,7 +220,7 @@ export const HeroSection: React.FC = () => {
             <motion.div variants={fadeUpVariants} style={{ marginBottom: '1vw', marginTop: '2vw' }}>
               <p
                 className="font-normal uppercase text-[#C4B29E] font-sans"
-                style={{ fontSize: '0.78vw', letterSpacing: '0.28em' }}
+                style={{ fontSize: '0.95vw', letterSpacing: '0.28em' }}
               >
                 <span className="text-[#F3DBB3] font-semibold drop-shadow-[0_0_8px_rgba(243,219,179,0.5)]" style={{ letterSpacing: '0.3em' }}>CA FINALIST</span> <span className="text-[#8C6D4F]" style={{ margin: '0 0.3vw' }}>•</span> AI AGENT ENGINEER <span className="text-[#8C6D4F]" style={{ margin: '0 0.3vw' }}>•</span> AUTOMATION
               </p>
@@ -230,7 +230,7 @@ export const HeroSection: React.FC = () => {
             <motion.div
               variants={fadeUpVariants}
               className="font-light text-[#A8988B] tracking-wide font-sans"
-              style={{ fontSize: '0.85vw', lineHeight: '1.8', maxWidth: '32vw', marginBottom: '1.5vw' }}
+              style={{ fontSize: '1vw', lineHeight: '1.8', maxWidth: '34vw', marginBottom: '1.5vw' }}
             >
               <p>
                 Bridging the deep precision of Accounting and Finance with the autonomous execution of Agentic AI and Automation.
@@ -252,7 +252,7 @@ export const HeroSection: React.FC = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] font-medium uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
-                style={{ fontSize: '0.72vw', letterSpacing: '0.24em', padding: '0.8vw 1.6vw', gap: '0.5vw' }}
+                style={{ fontSize: '0.85vw', letterSpacing: '0.24em', padding: '0.9vw 1.8vw', gap: '0.5vw' }}
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
@@ -271,7 +271,7 @@ export const HeroSection: React.FC = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] font-medium uppercase transition-all duration-300"
-                style={{ fontSize: '0.72vw', letterSpacing: '0.24em', padding: '0.8vw 1.6vw', gap: '0.4vw' }}
+                style={{ fontSize: '0.85vw', letterSpacing: '0.24em', padding: '0.9vw 1.8vw', gap: '0.4vw' }}
               >
                 <span>DOWNLOAD CV</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5" style={{ fontSize: '0.6vw' }}>
