@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollStack, { ScrollStackItem, ScrollStackRef } from './ui/ScrollStack';
 
@@ -280,11 +280,16 @@ const projects: Project[] = [
 
 export const ProjectsSection: React.FC = () => {
   const scrollStackRef = useRef<ScrollStackRef>(null);
+  const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
 
   const scrollToProject = (index: number) => {
     if (scrollStackRef.current) {
       scrollStackRef.current.scrollToItem(index);
     }
+  };
+
+  const toggleFlip = (index: number) => {
+    setFlippedCards(prev => ({ ...prev, [index]: !prev[index] }));
   };
 
   return (
@@ -378,10 +383,13 @@ export const ProjectsSection: React.FC = () => {
               baseScale={1 - (projects.length - 1) * 0.035}
               useWindowScroll={true}
             >
-              {projects.map((project) => (
+              {projects.map((project, index) => (
                 <ScrollStackItem key={project.title} id={`project-${project.number}`}>
-                  <div className="relative w-full h-[550px] sm:h-[450px] perspective-[2000px] group">
-                <div className="w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)] shadow-[0_25px_70px_rgba(0,0,0,0.98)]">
+                  <div 
+                    className="relative w-full h-[550px] sm:h-[450px] perspective-[2000px] group cursor-pointer lg:cursor-default"
+                    onClick={() => toggleFlip(index)}
+                  >
+                <div className={`w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] shadow-[0_25px_70px_rgba(0,0,0,0.98)] lg:group-hover:[transform:rotateX(180deg)] ${flippedCards[index] ? '[transform:rotateX(180deg)]' : ''}`}>
                   
                   {/* ================= FRONT FACE ================= */}
                   <div className="absolute inset-0 w-full h-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 [backface-visibility:hidden] overflow-hidden flex flex-col justify-between">
@@ -414,7 +422,8 @@ export const ProjectsSection: React.FC = () => {
                     </div>
 
                     <div className="flex items-center space-x-3 text-[#D4AF37] opacity-80">
-                      <span className="text-[10px] font-mono tracking-[0.3em] uppercase">Hover to Explore Details</span>
+                      <span className="text-[10px] font-mono tracking-[0.3em] uppercase hidden lg:inline">Hover to Explore Details</span>
+                      <span className="text-[10px] font-mono tracking-[0.3em] uppercase lg:hidden">Tap to Explore Details</span>
                       <span className="animate-pulse text-sm">↓</span>
                     </div>
                   </div>
