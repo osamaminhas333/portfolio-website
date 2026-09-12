@@ -80,3 +80,9 @@ This section documents bugs encountered and solved during the mobile rigid layou
 5. **3D Flip (rotateX) Clipping with Overlapping DOM Elements**
    - *Mistake*: Attempted to make the `ScrollStack` projects appear as a tightly packed cascading deck initially by setting `itemDistance` to a massive negative number (e.g. `-280px`). While they cascaded beautifully in 2D, hovering over a card caused its 3D `rotateX(180deg)` flip to physically slice/clip through the card layered on top of it.
    - *Correction*: Restored `itemDistance={20}`. 3D physics require physical DOM space to rotate without Z-clipping. If elements need to flip on hover, they must start spaced out.
+
+## 6. Recent Structural Upgrades (September 12, 2026)
+- **HeroSection Zoom-Proofing:** Removed standard Tailwind \sm:/md:/lg:\ size classes and \clamp()\ bounds in favor of pure CSS \max(px, vw)\ logic (e.g. \ont-size: max(14px, 1.25vw)\). This mathematically locks the layout to scale proportionally during desktop browser zooming (preventing elements from drifting out of place) while enforcing a strict pixel floor so the site remains perfectly readable on narrow mobile screens.
+- **Project Descriptions:** All inner scrollbars inside project cards are completely stripped (\overflow-hidden\). All original description text is fully preserved. Padding on the back faces is reduced (\p-6 sm:px-10 sm:py-8\) to maximize reading area without truncation.
+- **Mobile Flip UX:** 3D project cards now utilize an explicit React \onClick\ state array (\lippedCards\) for mobile touch devices, as CSS \:hover\ does not reliably trigger or reset on mobile WebKit.
+- **Button Fallbacks:** Projects without deployment links automatically gracefully fallback to display 'Project Video Coming Soon' rather than a broken 'View Deployment' link.

@@ -59,3 +59,12 @@ Running log: date · decision · reason
 ## 2026-09-12
 - **Decision:** Added Anthropic MCP Advanced Topics certificate.
 - **Reason:** Provided by user in chat as an image upload.
+
+- **Decision:** Replaced Tailwind breakpoints in \HeroSection.tsx\ with pure CSS \max(px, vw)\ logic for all dimensions and font sizes.
+- **Reason:** To create a perfectly proportional, zoom-proof layout on desktop browsers that scales flawlessly without breakpoint jumps, while guaranteeing that text won't shrink to microscopic, unreadable sizes on mobile devices.
+
+- **Decision:** Restored full original text to all Project descriptions, removing inner scrollbars (\overflow-hidden\).
+- **Reason:** User explicitly rejected arbitrary text truncation. Inner scrollbars were removed because they cause severe scroll-trapping bugs when placed over 3D canvases and Lenis smooth scrolling. To fit the text, card padding was reduced and verbose trailing summaries were trimmed.
+
+- **Decision:** Implemented explicit tap-to-flip state (\lippedCards\) for Project cards on mobile.
+- **Reason:** CSS \group-hover\ fails or sticks unreliably on touch devices. Adding an explicit \onClick\ handler guarantees users can flip the card and access the deployment link on phones.
