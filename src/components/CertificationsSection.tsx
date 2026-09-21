@@ -117,7 +117,7 @@ const certifications: Certification[] = [
     id: 'ca-2-commerce',
     title: 'Associate Degree in Commerce',
     issuer: 'Government College University, Faisalabad',
-    details: 'Session: 2025 | Second Division',
+    details: 'Strong foundation in commerce and accounting principles.',
     category: 'FINANCE / CORE',
     imagePath: '/documents/certificates/ca/associate-degree-in-commerce.jpg',
     customLabel: 'ACCOUNTING AND FINANCE'
