@@ -43,6 +43,12 @@ const education: RouteStop[] = [
     description: 'Completed Assessment in Fundamental Competencies (AFC) and Certificate in Accounting and Finance (CAF).',
   },
   {
+    id: 'e1-5',
+    title: 'BS ACCOUNTING & FINANCE',
+    organization: 'ALLAMA IQBAL OPEN UNIVERSITY (AIOU)',
+    description: 'Advanced academic studies focusing on financial reporting, corporate finance, and strategic management.',
+  },
+  {
     id: 'e2',
     title: 'ASSOCIATE DEGREE IN COMMERCE',
     organization: 'GOVERNMENT COLLEGE UNIVERSITY, FAISALABAD (GCUF)',
