@@ -114,6 +114,15 @@ const certifications: Certification[] = [
     customLabel: 'ACCOUNTING AND FINANCE'
   },
   {
+    id: 'ca-2-commerce',
+    title: 'Associate Degree in Commerce',
+    issuer: 'Government College University, Faisalabad',
+    details: 'Session: 2025 | Second Division',
+    category: 'FINANCE / CORE',
+    imagePath: '/documents/certificates/ca/associate-degree-in-commerce.jpg',
+    customLabel: 'ACCOUNTING AND FINANCE'
+  },
+  {
     id: 'ca-2',
     title: 'Workshop On Building Sustainability (S1, S2)',
     issuer: 'SMP Committee of ICAP',
@@ -156,8 +165,8 @@ export const CertificationsSection: React.FC = () => {
   const aiSpecialisations = certifications.filter(c => c.category === 'AI / AGENTIC WORKFLOWS').slice(0, 3);
   const aiCourses = certifications.filter(c => c.category === 'AI / AGENTIC WORKFLOWS').slice(3);
   
-  const caDegree = certifications.filter(c => c.category === 'FINANCE / CORE').slice(0, 1);
-  const caCourses = certifications.filter(c => c.category === 'FINANCE / CORE').slice(1);
+  const caDegree = certifications.filter(c => c.category === 'FINANCE / CORE').slice(0, 2);
+  const caCourses = certifications.filter(c => c.category === 'FINANCE / CORE').slice(2);
 
   const renderCertCard = (cert: Certification, index: number, isCaMain: boolean = false) => (
     <motion.div
@@ -292,7 +301,7 @@ export const CertificationsSection: React.FC = () => {
               // QUALIFICATION
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {caDegree.map((cert, i) => renderCertCard(cert, i, true))}
+              {caDegree.map((cert, i) => renderCertCard(cert, i, cert.id === 'ca-1'))}
             </div>
           </div>
 
